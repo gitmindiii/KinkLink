@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_encryption"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/txtEncryption"
+        android:layout_margin="@dimen/_5sdp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_my_chat"
+        android:padding="@dimen/_3sdp"
+        android:text="@string/dummy_time"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_9ssp"
+        android:visibility="gone"  />
+
+    <TextView
+        android:id="@+id/tv_my_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_chat_date_banner"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_other_text_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/iv_other_msg_img"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/placeholder_user"
+            app:siBorderColor="@color/other_chat_bg"
+            app:siBorderWidth="@dimen/_1sdp"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_other_msg_web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/gray_arrow" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@drawable/bg_other_chat"
+                    android:padding="@dimen/_5sdp">
+
+                    <WebView
+                        android:id="@+id/wv_other_chat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/enter_message"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_12ssp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/wb_other_msg_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rl_other_msg_web"
+                android:layout_marginStart="@dimen/_42sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/dummy_time"
+                android:textColor="@color/other_chat_bg"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_normal_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_other_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/gray_arrow"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tv_other_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/bg_other_chat"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/enter_message"
+                    android:textColor="@color/field_text_color"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_img_view"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_125sdp"
+                    android:layout_alignParentStart="true"
+                   >
+
+                    <com.github.siyamed.shapeimageview.RoundedImageView
+                        android:id="@+id/iv_image_msg"
+                        android:layout_width="@dimen/_125sdp"
+                        android:layout_height="@dimen/_125sdp"
+                        android:scaleType="fitXY"
+                        app:siRadius="@dimen/_6sdp"
+                        app:siBorderWidth="0dp"
+                        app:siSquare="true"
+                       />
+
+                    <ProgressBar
+                        android:id="@+id/img_progress"
+                        style="@android:style/Widget.ProgressBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_other_msg_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/rl_other_msg"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/dummy_time"
+                android:textColor="@color/other_chat_bg"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--   <RelativeLayout
+           android:id="@+id/rl_other_image_msg"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/_10sdp">
+
+           <com.github.siyamed.shapeimageview.CircularImageView
+               android:id="@+id/iv_other_image_pic"
+               android:layout_width="@dimen/_30sdp"
+               android:layout_height="@dimen/_30sdp"
+               android:layout_alignParentStart="true"
+               android:src="@drawable/app_icon"
+               app:siBorderColor="@color/other_chat_bg"
+               app:siBorderWidth="@dimen/_1sdp" />
+
+           <RelativeLayout
+               android:id="@+id/rl_other_img"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentStart="true"
+               android:layout_marginStart="@dimen/_32sdp"
+               android:layout_marginTop="@dimen/_10sdp">
+
+               <ImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/gray_arrow" />
+
+               <com.github.siyamed.shapeimageview.RoundedImageView
+                   android:id="@+id/iv_image_msg"
+                   android:layout_width="@dimen/_105sdp"
+                   android:layout_height="@dimen/_105sdp"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginStart="@dimen/_8sdp"
+                   android:scaleType="fitXY"
+                   android:src="@drawable/app_icon"
+                   app:siBorderColor="@color/other_chat_bg"
+                   app:siBorderWidth="@dimen/_3sdp"
+                   app:siRadius="@dimen/_6sdp"
+                   app:siSquare="true" />
+           </RelativeLayout>
+
+           <TextView
+               android:id="@+id/tv_other_img_time"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentStart="true"
+               android:layout_below="@+id/rl_other_img"
+               android:layout_marginStart="@dimen/_42sdp"
+               android:layout_marginTop="@dimen/_3sdp"
+               android:text="@string/dummy_time"
+               android:textColor="@color/other_chat_bg"
+               android:textSize="@dimen/_10ssp" />
+
+       </RelativeLayout>-->
+
+</LinearLayout>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_5sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:visibility="visible"
+                android:id="@+id/dialog_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp">
+                <TextView
+                    android:id="@+id/tv_intent_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:fontFamily="@font/philosopher_regular"
+                    android:text="@string/you_are_a"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_18ssp" />
+                <TextView
+                    android:id="@+id/tv_intent_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_intent_heading"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/philosopher_regular"
+                    android:text="Select all the apply"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_20sdp" />
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/dialog_decline_button"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_error" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <FrameLayout
+                            android:id="@+id/fl_man"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:layout_marginStart="@dimen/_20sdp"
+
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:id="@+id/rl_man"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_man"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_man"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_man_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_man"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/inactive_man" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:visibility="visible"
+                                    android:id="@+id/tv_man"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/man"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:id="@+id/fl_woman"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+
+                            android:layout_alignParentEnd="true"
+
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_woman"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_woman"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_woman_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_woman"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/inactive_woman" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:visibility="visible"
+                                    android:id="@+id/tv_woman"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/woman"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:id="@+id/fl_couple"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_below="@+id/fl_man">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_couple"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_couple"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_couple_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_couple"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/inactive_couple" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:visibility="visible"
+                                    android:id="@+id/tv_couple"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/couple"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/fl_neutral"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_below="@+id/fl_woman"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_neutral"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_neutral"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_couple_neutral_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_neutral"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/neutral_active_icon" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:visibility="visible"
+                                    android:id="@+id/tv_neutral"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/neutral"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+
+                        <FrameLayout
+                            android:id="@+id/fl_trans_male"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:layout_below="@id/fl_couple"
+                            android:layout_marginLeft="@dimen/_20sdp"
+
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_trans_male"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_trans"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_trans_male_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_trans_male"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/inactive_trans" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:visibility="visible"
+                                    android:id="@+id/tv_trans_male"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/trans_male"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                        <FrameLayout
+                            android:id="@+id/fl_trans_female"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:layout_below="@id/fl_couple"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_100sdp">
+                                    <pl.droidsonroids.gif.GifTextView
+                                        android:id="@+id/gif_trans_female"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_100sdp"
+                                        android:background="@drawable/active_trans"
+                                        android:visibility="gone" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_trans_female_border"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_70sdp"
+                                        android:layout_marginTop="@dimen/_37sdp"
+                                        android:paddingBottom="@dimen/_1sdp"
+                                        android:paddingLeft="@dimen/_8sdp"
+                                        android:paddingRight="@dimen/_8sdp"
+                                        android:paddingTop="@dimen/_7sdp"
+                                        android:visibility="gone"
+                                        app:srcCompat="@drawable/active_gender_ring" />
+                                    <android.support.v7.widget.AppCompatImageView
+                                        android:id="@+id/iv_trans_female"
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/inactive_trans" />
+                                </RelativeLayout>
+                                <TextView
+                                    android:id="@+id/tv_trans_female"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/trans_female"
+                                    android:textColor="@color/inactive_text_color"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/btn_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_70sdp"
+                        android:layout_marginRight="@dimen/_70sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_login_btn"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/done"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/match_bg"
+    android:orientation="vertical"
+    android:id="@+id/activityRoot">
+
+    <include
+        android:id="@+id/view_tease_expire"
+        layout="@layout/tease_expire_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/rel_view_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <include
+            android:id="@+id/ly_no_network"
+            layout="@layout/view_no_network_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/ly_user_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_chat_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/header_bg"
+                >
+
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <com.github.siyamed.shapeimageview.CircularImageView
+                    android:layout_toRightOf="@+id/iv_back"
+                    android:id="@+id/img_with_chat"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/placeholder_user"
+                    android:layout_centerVertical="true"
+                    android:visibility="visible"
+                    app:siBorderColor="@color/other_chat_bg"
+                    app:siBorderWidth="1.5dp"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/img_with_chat"
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_centerVertical="true"
+                    android:fontFamily="@font/philosopher_regular"
+                    android:text="@string/name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_18ssp"
+                    android:layout_marginLeft="5dp"
+                    android:ellipsize="end"
+                    android:layout_toLeftOf="@+id/iv_menu"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_menu"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_chat_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_chat_tool_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_chat_date_banner"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_chat"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_chat_date">
+
+                <RelativeLayout
+                    android:id="@+id/ly_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/rl_send_message"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp">
+
+                    <!--<android.support.v7.widget.RecyclerView
+                        android:id="@+id/chat_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />-->
+
+                    <android.support.v4.widget.SwipeRefreshLayout
+                        android:id="@+id/swipeRefreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/chat_recycler_view"
+                            android:layout_width="match_parent"
+                            android:overScrollMode="never"
+                            android:layout_height="match_parent"
+                            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+                    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_send_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bottom_tab_bg">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="7dp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_set_emoji"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:padding="@dimen/_4sdp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_in_love" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_40sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:background="@drawable/bg_write_message">
+
+                            <EditText
+                                android:id="@+id/ed_message"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/_35sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:background="@null"
+                                android:fontFamily="@font/lato_regular"
+                                android:hint="@string/enter_message"
+                                android:imeOptions="actionNone"
+                                android:inputType="text|textMultiLine|textCapSentences"
+                                android:textColor="@color/field_text_color"
+                                android:textColorHint="@color/light_gray_color"
+                                android:textSize="@dimen/_13ssp" />
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:id="@+id/iv_pick_image"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:padding="@dimen/_6sdp"
+                                app:srcCompat="@drawable/ic_attachment" />
+
+                        </RelativeLayout>
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_send_msg"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:padding="@dimen/_4sdp"
+                            app:srcCompat="@drawable/ic_send" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_user_deleted_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bottom_tab_bg"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center"
+                        android:text="@string/user_no_loger_available"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_chat_menu"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ly_block_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_user_block"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:text="@string/block"
+                            android:textColor="@color/field_text_color"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:background="@color/color_view1" />
+
+                        <TextView
+                            android:id="@+id/tv_chat_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:text="@string/delete"
+                            android:textColor="@color/field_text_color"
+                            android:textSize="@dimen/_12ssp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

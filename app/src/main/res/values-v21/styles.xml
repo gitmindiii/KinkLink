@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/transprent</item>
+    </style>
+
+    <style name="ProgressBarTheme" parent="AppTheme">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/transprent</item>
+        <item name="android:windowBackground">@color/transprent</item>
+    </style>
+</resources>

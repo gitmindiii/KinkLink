@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/match_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_view_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_7sdp"
+        android:paddingRight="@dimen/_7sdp"
+        android:paddingTop="@dimen/_7sdp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tv_viewed_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/who_view_me"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14ssp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/field_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_who_i_viewed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/who_you_view"
+                    android:textColor="@color/field_text_color"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <include
+            android:id="@+id/ly_no_views"
+            layout="@layout/view_no_offer_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/simpleSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/views_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingBottom="80dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+</LinearLayout>

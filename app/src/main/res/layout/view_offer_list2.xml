@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <com.daimajia.swipe.SwipeLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:dragEdge="right"
+            app:mode="same_level">
+
+            <RelativeLayout
+                android:id="@+id/rl_message_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_right_arrow"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_right_msg_arrow" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_toEndOf="@id/iv_right_arrow"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/philosopher_regular"
+                        android:gravity="center"
+                        android:text="@string/heading_message"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tv_offer_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center"
+                        android:maxLines="5"
+                        android:text="@string/na"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:id="@+id/ly_you_pay"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_payment_type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/you_pay_me"
+                                    android:textColor="@color/field_text_color"
+                                    android:textSize="@dimen/_12ssp" />
+
+                                <LinearLayout
+                                    android:id="@+id/ly_payment_amount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lato_regular"
+                                        android:gravity="center"
+                                        android:text="@string/dollar_sign"
+                                        android:textColor="@color/field_text_color"
+                                        android:textSize="@dimen/_14ssp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_you_pay_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_2sdp"
+                                        android:fontFamily="@font/lato_regular"
+                                        android:gravity="center"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="@dimen/_14ssp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ly_counter_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center"
+                                    android:text="@string/counter_price"
+                                    android:textColor="@color/field_text_color"
+                                    android:textSize="@dimen/_12ssp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lato_regular"
+                                        android:gravity="center"
+                                        android:text="@string/dollar_sign"
+                                        android:textColor="@color/field_text_color"
+                                        android:textSize="@dimen/_14ssp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_counter_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_2sdp"
+                                        android:fontFamily="@font/lato_regular"
+                                        android:gravity="center"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="@dimen/_14ssp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@color/color_view1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_20sdp">
+
+                                <TextView
+                                    android:id="@+id/tv_offer_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:text="@string/offer_price"
+                                    android:textColor="@color/field_text_color"
+                                    android:textSize="@dimen/_12ssp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_user_personal_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_user_info"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RelativeLayout
+                                        android:id="@+id/rl_user_image"
+                                        android:layout_width="@dimen/_65sdp"
+                                        android:layout_height="@dimen/_65sdp">
+
+                                        <com.github.siyamed.shapeimageview.CircularImageView
+                                            android:id="@+id/iv_user_image"
+                                            android:layout_width="@dimen/_62sdp"
+                                            android:layout_height="@dimen/_62sdp"
+                                            android:layout_centerInParent="true"
+                                            android:src="@drawable/app_icon"
+                                            app:siBorderColor="@color/white"
+                                            app:siBorderWidth="1.5dp" />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerInParent="true"
+                                            android:background="@drawable/active_gender_ring" />
+
+                                    </RelativeLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="@dimen/_75sdp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_offer_name"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="@dimen/_20sdp"
+                                                android:layout_gravity="center_vertical"
+                                                android:ellipsize="end"
+                                                android:fontFamily="@font/lato_regular"
+                                                android:gravity="start"
+                                                android:maxLines="1"
+                                                android:maxWidth="@dimen/_70sdp"
+                                                android:text="@string/name"
+                                                android:textColor="@color/field_text_color"
+                                                android:textSize="@dimen/_15ssp" />
+
+                                            <android.support.v7.widget.AppCompatImageView
+                                                android:id="@+id/iv_offer_check"
+                                                android:layout_width="@dimen/_20sdp"
+                                                android:layout_height="@dimen/_20sdp"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                android:padding="@dimen/_3sdp"
+                                                app:srcCompat="@drawable/ic_check_circular_button" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="@dimen/_18sdp"
+                                            android:layout_gravity="start"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/tv_offer_age"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="@dimen/_18sdp"
+                                                android:layout_gravity="center"
+                                                android:fontFamily="@font/lato_regular"
+                                                android:gravity="center"
+                                                android:text="@string/name"
+                                                android:textColor="@color/field_text_color"
+                                                android:textSize="@dimen/_12ssp" />
+
+                                            <TextView
+                                                android:id="@+id/tv_offer_gender"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="@dimen/_18sdp"
+                                                android:layout_gravity="center"
+                                                android:layout_marginStart="@dimen/_5sdp"
+                                                android:fontFamily="@font/lato_regular"
+                                                android:gravity="center"
+                                                android:text="@string/name"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/_12ssp" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/tv_offer_city"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/lato_regular"
+                                            android:text="@string/city"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/_12ssp" />
+
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ly_accept_reject"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:id="@+id/btn_accept_offer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_offer_accept_btn"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/accept"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_11ssp" />
+
+                                <TextView
+                                    android:id="@+id/btn_counter_offer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_offer_counter_btn"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/counter"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_11ssp" />
+
+                                <TextView
+                                    android:id="@+id/btn_decline_offer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_interest_list_items"
+                                    android:fontFamily="@font/lato_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/decline"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_11ssp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_pending_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/offers"
+                        android:textColor="@color/pending_color"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_offer_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="@string/offers"
+                            android:textColor="@color/pending_color"
+                            android:textSize="@dimen/_11ssp"
+                            android:visibility="gone" />
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/countdown_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_3sdp"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_toEndOf="@id/tv_offer_status"
+                            android:padding="@dimen/_2sdp"
+                            app:isHideTimeBackground="true"
+                            app:isShowHour="true"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:isTimeTextBold="true"
+                            app:suffixHour=":"
+                            app:suffixMinute=":"
+                            app:suffixTextColor="@color/field_text_color"
+                            app:suffixTextSize="@dimen/_12ssp"
+                            app:timeTextColor="@color/field_text_color"
+                            app:timeTextSize="@dimen/_12ssp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_left_arrow"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_left_arrow" />
+            </RelativeLayout>
+        </com.daimajia.swipe.SwipeLayout>
+    </android.support.v7.widget.CardView>
+
+    <!--<View
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />-->
+
+</LinearLayout>

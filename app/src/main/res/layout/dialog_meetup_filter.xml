@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_add_visits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/dialog_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <TextView
+                    android:id="@+id/tv_add_visit_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/philosopher_regular"
+                    android:text="@string/filter"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_19ssp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/dialog_decline_button"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:padding="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_error" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/select_date"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_from_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_from_date"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_visit_calendar" />
+
+                        <TextView
+                            android:id="@+id/tv_from_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@id/iv_from_date"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/from_dt"
+                            android:textColor="@color/light_gray_color"
+                            android:textSize="@dimen/_14ssp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_from_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_view1" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_to_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_to_date"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_visit_calendar" />
+
+                        <TextView
+                            android:id="@+id/tv_to_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@id/iv_to_date"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/to_dt"
+                            android:textColor="@color/light_gray_color"
+                            android:textSize="@dimen/_14ssp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_to_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_view1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/select_city"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_city_town"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_city_town"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_location" />
+
+                        <TextView
+                            android:id="@+id/tv_city_town"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@id/iv_city_town"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center_vertical"
+                            android:text="@string/city_town"
+                            android:textColor="@color/light_gray_color"
+                            android:textSize="@dimen/_14ssp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_city_town"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_view1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="@string/select_miles"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/tv_miles_min_limit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/tv_dash"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="0"
+                            android:textColor="@color/field_text_color"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/tv_dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:layout_toStartOf="@+id/tv_miles_max_limit"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="@string/dash_symbol"
+                            android:textColor="@color/field_text_color"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/tv_miles_max_limit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:fontFamily="@font/lato_regular"
+                            android:text="20"
+                            android:textColor="@color/field_text_color"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+
+                    <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
+                        android:id="@+id/rangeSeekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:bar_color="@color/light_gray_color"
+                        app:bar_highlight_color="@color/colorPrimary"
+                        app:corner_radius="10"
+                        app:data_type="_integer"
+                        app:max_value="100"
+                        app:min_value="0"
+                        app:left_thumb_image="@drawable/seekbar"
+                        app:left_thumb_image_pressed="@drawable/seekbar" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/bg_login_btn"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center_vertical"
+                android:text="@string/btn_search"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

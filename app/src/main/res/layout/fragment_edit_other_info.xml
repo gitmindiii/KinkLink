@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_edit_other_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/add_interest"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_interests"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tv_interests"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_25sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_add_interest"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@color/color_view1" />
+
+               <!-- <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="@dimen/_10sdp" />-->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/horizontal_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/city_town"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_city_town"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_city_dropdown"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_city_town"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/iv_city_dropdown"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_view1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/body_type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_body_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_body_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_body_type"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/ethnicity"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_ethnicity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_ethnicity"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_ethnicity"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/work"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <!--<android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />-->
+
+                    <EditText
+                        android:id="@+id/tv_work"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@null"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_work"
+                        android:inputType="text|textMultiLine|textCapSentences"
+                        android:maxLength="50"
+                        android:textColor="@color/field_text_color"
+                        android:textColorHint="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_work"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/education"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_education"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_education"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/preferences"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_preferences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_down_arrow"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_preferences"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_toStartOf="@id/iv_down_arrow"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/select"
+                        android:textColor="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tv_preferences"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/about"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <EditText
+                        android:id="@+id/ed_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="bottom"
+                        android:hint="Please write a description about yourself"
+                        android:imeOptions="actionNone"
+                        android:inputType="text|textMultiLine|textCapSentences"
+                        android:maxLength="500"
+                        android:textColor="@color/field_text_color"
+                        android:textColorHint="@color/field_text_color"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/ed_about"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/color_view1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_50sdp">
+
+                <TextView
+                    android:id="@+id/btn_skip"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center_vertical|start"
+                    android:background="@drawable/bg_login_btn"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical|start"
+                    android:text="@string/btn_skip"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:id="@+id/btn_edit_basic_info"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:background="@drawable/bg_login_btn"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/btn_save_continue"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/white" />
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

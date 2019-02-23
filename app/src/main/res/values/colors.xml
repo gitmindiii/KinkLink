@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#cf1f2a</color>
+    <color name="colorPrimaryDark">#cf1f2a</color>
+    <color name="colorAccent">#cf1f2a</color>
+    <color name="transparent_colorAccent">#80cf1f2a</color>
+
+    <color name="facebook">#475993</color>
+    <color name="blue">#FF4C6ACE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transprent">#00000000</color>
+    <color name="black50p">#80000000</color>
+
+    <color name="bg_make_offer_screen">#151615</color>
+    <color name="bg_make_offer_trans">#E6151615</color>
+
+    <color name="gray">#828282</color>
+    <color name="light_gray_color">#44000000</color>
+
+    <color name="color_view1">#cccccc</color>
+    <color name="color_view2">#b5b5b5</color>
+
+    <color name="gender_image_bg">#f0e9ea</color>
+
+    <color name="field_text_color">#333333</color>
+    <color name="active_text_color">#cf1f2a</color>
+    <color name="inactive_text_color">#333333</color>
+
+    <color name="green">#008000</color>
+    <color name="yellow">#ffa500</color>
+    <color name="match_bg">#f7f7f7</color>
+
+    <color name="color_splash_bg">#eff0f5</color>
+
+    <color name="pending_color">#d75d64</color>
+    <color name="accept_color">#0a850a</color>
+    <color name="pending_text_color">#ed5f09</color>
+
+    <color name="other_chat_bg">#d9d8d8</color>
+    <color name="my_chat_bg">#e18086</color>
+    <color name="other_chat_text_color">#3c3c3c</color>
+
+    <!--Offer-->
+    <color name="offer_accept_btn">#17a117</color>
+    <color name="offer_counter_btn">#ff6600</color>
+    
+    <!--Verify Photo-->
+    <color name="verify_photo_instruction_msg">#959595</color>
+    <color name="reason_msg_color">#626262</color>
+    
+</resources>

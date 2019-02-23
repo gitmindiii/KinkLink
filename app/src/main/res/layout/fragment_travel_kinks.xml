@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/match_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_travel_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_7sdp"
+        android:paddingRight="@dimen/_7sdp"
+        android:paddingTop="@dimen/_7sdp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tv_meet_up"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/meet_up"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14ssp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/field_text_color" />
+
+                <TextView
+                    android:id="@+id/tv_my_visits"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/my_visits"
+                    android:textColor="@color/field_text_color"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/ly_no_travel"
+                    layout="@layout/view_no_match_found"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/travel_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    android:paddingBottom="80dp"
+                    android:clipToPadding="false"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginEnd="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_meet_up_filter"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/filter_128" />
+
+                    <ImageView
+                        android:id="@+id/iv_add_visits"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/add_128"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+</LinearLayout>

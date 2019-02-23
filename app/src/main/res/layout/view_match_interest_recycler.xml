@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/bg_match_interest_recycler"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingTop="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/item_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/reg_interests"
+            android:textAllCaps="false"
+            android:textColor="@color/field_text_color"
+            android:textSize="@dimen/_14ssp" />
+
+    </RelativeLayout>
+</RelativeLayout>

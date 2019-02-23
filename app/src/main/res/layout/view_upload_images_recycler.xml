@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_85sdp"
+    android:layout_height="@dimen/_80sdp"
+    android:orientation="vertical">
+
+    <com.kinklink.helper.RoundedImageAspectRatio
+        android:id="@+id/iv_user_image"
+        android:layout_width="@dimen/_71sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/upload_image"
+        app:siRadius="@dimen/_10sdp"
+        app:siSquare="true"
+        android:scaleType="centerCrop"
+        app:siBorderAlpha="0"
+        app:ari_aspect="height"
+        app:ari_ratio="1"/>
+
+     <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/image_cancel"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/_6sdp"
+       app:srcCompat="@drawable/ic_error" />
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "784264535019",
+    "firebase_url": "https://live-kinklink-73b57.firebaseio.com",
+    "project_id": "live-kinklink-73b57",
+    "storage_bucket": "live-kinklink-73b57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784264535019:android:abb3334175928558",
+        "android_client_info": {
+          "package_name": "com.kinklink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784264535019-de1jh216dmaulag15p1a5ehrs81mcdd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaV2bqJ6yH6mnoebrx81g8uCL3rsA_y28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

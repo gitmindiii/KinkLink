@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/ly_no_network"
+        layout="@layout/view_no_network_connection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/main_tool_bar"
+            layout="@layout/action_bar_for_all_screens"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+
+        <FrameLayout
+            android:id="@+id/fragment_place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_tool_bar" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_profile_menu"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_72sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentTop="true"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/block"
+                    android:textColor="@color/field_text_color"
+                    android:textSize="@dimen/_12ssp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@color/color_view1" />
+
+                <TextView
+                    android:id="@+id/tv_user_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:text="@string/report"
+                    android:textColor="@color/field_text_color"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/bottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="40dp"
+                    app:cardElevation="10dp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <LinearLayout
+                            android:id="@+id/ly_travel_kinks"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_travel_kinks"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/inactive_airplane_ico" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ly_viewed"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/iv_viewed"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/inactive_view_ico" />
+
+                            <FrameLayout
+                                android:id="@+id/lay_viewd_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:layout_marginLeft="@dimen/_18sdp">
+                                <ImageView
+                                    android:id="@+id/img_viewed_count"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:src="@drawable/red_circle"
+                                    android:layout_gravity="right"
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/txt_viewed_count"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_gravity="right"
+                                    android:text="100"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_8ssp" />
+                            </FrameLayout>
+
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ly_matches"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_matches"
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ly_tease"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_tease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@drawable/ic_tease_inactive_icon" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ly_offers"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_offers"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/inactive_gift_ico" />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/ly_chat_history"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_chat_history"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/inactive_chat_ico" />
+
+                            <ImageView
+                                android:id="@+id/img_chat_unread_ic"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/red_circle"
+                                android:layout_gravity="right"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:visibility="gone"
+                               />
+
+                            </FrameLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bg_circle"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:src="@drawable/fb_appicon"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

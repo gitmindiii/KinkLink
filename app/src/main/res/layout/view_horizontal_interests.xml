@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_adapter_interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/item_interest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/reg_interests"
+            android:gravity="left"
+            android:paddingStart="@dimen/_5sdp"
+            android:textColor="@color/field_text_color"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/cancel_icon"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/_3sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_error" />
+
+    </RelativeLayout>
+
+   <!-- <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/bg_interest_list_items"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingTop="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/item_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/reg_interests"
+            android:textAllCaps="false"
+            android:textColor="@color/field_text_color"
+            android:textSize="@dimen/_14ssp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/cancel_icon"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_toRightOf="@id/item_interest"
+            android:padding="@dimen/_4sdp"
+            app:srcCompat="@drawable/ic_error" />
+
+    </RelativeLayout>-->
+</RelativeLayout>

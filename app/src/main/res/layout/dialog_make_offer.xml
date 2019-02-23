@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_make_offer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.85"
+        android:background="@color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:id="@+id/rl_offer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/ly_offer_no_network"
+                layout="@layout/view_no_network_connection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ly_make_offer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_offer_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_offer_back"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_back"
+                        android:tint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/tv_intent_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/philosopher_regular"
+                        android:gravity="center"
+                        android:text="@string/make_offer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18ssp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_gravity="center">
+
+                        <com.github.siyamed.shapeimageview.CircularImageView
+                            android:id="@+id/iv_offer_user_image"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_105sdp"
+                            android:layout_height="@dimen/_105sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/make_offer_img_ring" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/heart_icon_profile" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_offer_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center"
+                        android:text="@string/enter_offer_price"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ly_free_love"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/bg_gender_image" />
+
+                                <ImageView
+                                    android:id="@+id/iv_active_love_ring"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/active_gender_ring"
+                                    android:visibility="gone" />
+
+                                <ImageView
+                                    android:id="@+id/iv_free_love"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_centerInParent="true"
+                                    android:padding="@dimen/_3sdp"
+                                    android:src="@drawable/inactive_free_love" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_free_love"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/lato_regular"
+                                android:gravity="center"
+                                android:maxLines="3"
+                                android:text="@string/free_love"
+                                android:textColor="@color/gender_image_bg"
+                                android:textSize="@dimen/_12ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/ly_you_pay_me"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/bg_gender_image" />
+
+                                <ImageView
+                                    android:id="@+id/iv_active_you_pay_ring"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/active_gender_ring"
+                                    android:visibility="gone" />
+
+                                <ImageView
+                                    android:id="@+id/iv_you_pay"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_centerInParent="true"
+                                    android:padding="@dimen/_3sdp"
+                                    android:src="@drawable/inactive_you_pay_me" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_you_pay_me"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/lato_regular"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="@string/you_pay_me"
+                                android:textColor="@color/gender_image_bg"
+                                android:textSize="@dimen/_12ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="match_parent" />
+
+
+                        <LinearLayout
+                            android:id="@+id/ly_i_will_pay"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/bg_gender_image" />
+
+                                <ImageView
+                                    android:id="@+id/iv_active_i_pay_ring"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:src="@drawable/active_gender_ring"
+                                    android:visibility="gone" />
+
+                                <ImageView
+                                    android:id="@+id/iv_i_pay"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_centerInParent="true"
+                                    android:padding="@dimen/_3sdp"
+                                    android:src="@drawable/inactive_i_pay_you" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_i_will_pay"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/lato_regular"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:text="@string/i_will_pay"
+                                android:textColor="@color/gender_image_bg"
+                                android:textSize="@dimen/_12ssp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_enter_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_make_offer"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/ed_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdp"
+                            android:background="@null"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="start"
+                            android:hint="@string/hint_message"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapSentences"
+                            android:maxLength="100"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:textColor="@color/field_text_color"
+                            android:textColorHint="@color/gray"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ly_enter_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_make_offer"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/lato_regular"
+                                android:gravity="center"
+                                android:text="@string/dollar_sign"
+                                android:textColor="@color/field_text_color"
+                                android:textSize="@dimen/_11ssp" />
+
+                            <EditText
+                                android:id="@+id/ed_offer_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:background="@null"
+                                android:fontFamily="@font/lato_regular"
+                                android:hint="@string/enter_offer_price"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:textColor="@color/field_text_color"
+                                android:textColorHint="@color/gray"
+                                android:textSize="@dimen/_13ssp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btn_offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_70sdp"
+                        android:layout_marginRight="@dimen/_70sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_login_btn"
+                        android:fontFamily="@font/lato_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/done"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

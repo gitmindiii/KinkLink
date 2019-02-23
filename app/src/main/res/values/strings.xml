@@ -1,0 +1,448 @@
+<resources>
+    <string name="app_name">KinkLink</string>
+    <!--  <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC4N27EaoT_hXcBEv_fhh1HTUu3mMYTGxk</string>-->
+
+    <!--Stage-->
+    <!-- <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAvZopdO4ner5H4IhYHft-gd-zGPh_CzFk</string>-->
+
+    <!--Live-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBSCzFepAPHkUyfpECX13Xl0IR63xWGGjk</string>
+-
+
+
+    // goole map and location API key
+  <!--<string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCURiv6wYdoGOM3nrwy9ODc8IXAX3u9MTE</string>-->
+
+
+    // Facebook Integration
+   <string name="facebook_app_id">286559268712659</string>
+   <string name="alert_api_fail">Something went wrong, please check after some time.</string>
+
+   <!--Alerts-->
+    <string name="click_again_to_exit">Click again to exit</string>
+    <string name="inactive_user">User is inactive from admin</string>
+    <string name="enable_gps">Please Turn On Your Location</string>
+
+    <string name="alertImageException">The file is corrupt &amp; cannot be opened.</string>
+    <string name="alertOutOfMemory">This device doesn\'t have enough space , free up storage space</string>
+
+    <!--Login-->
+    <string name="email_id">Email Address</string>
+    <string name="password"> Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="rem_me"> Remember me</string>
+    <string name="forgot_pass"> Forgot Password?</string>
+    <string name="login"> Login</string>
+    <string name="or"> OR</string>
+    <string name="connect_facebook"> Connect With Facebook</string>
+    <string name="dont_have_acc"> Don\'t have an account ?</string>
+    <string name="sign_up"> Sign up</string>
+
+    <string name="login_email_null">Please enter Email Address</string>
+    <string name="login_email_wrong">Invalid Email Address or Password</string>
+    <string name="login_email_invalid">Please enter valid Email Address</string>
+
+    <string name="login_password_null">Please enter your Password</string>
+    <string name="login_password_min_length">Password must be at least 8 character long</string>
+    <string name="login_password_max_length">Invalid Password</string>
+    <string name="login_password_wrong">Invalid Email Address or Password</string>
+
+    <!--Registration-->
+    <!--Select Who You Are Screen-->
+    <string name="real_people"> Real People. Real Feelings.\nReal Dating.</string>
+    <string name="you_are_a">Who are you</string>
+    <string name="looking_for">Looking for</string>
+    <string name="man">Man</string>
+    <string name="woman">Woman</string>
+    <string name="couple">Couple</string>
+    <string name="trans_male">Transgender Male</string>
+    <string name="trans_female">Transgender Female</string>
+    <string name="done">Done</string>
+    <string name="btn_continue">Continue</string>
+    <string name="you_are_a_null">Please select Who are you</string>
+    <string name="lookin_for_null">Please select Looking for</string>
+
+    <string name="email_sent_msg">We did sent a link on your registered email to verify email address, please check.</string>
+
+    <!--Legal Account Dialog-->
+    <string name="legal_message">I agree to receive emails from KinkLink.com relating to my account, and services, updates and promotions from KinkLink.com, its affiliates and subsidiaries. I acknowledge that I can withdraw my consent at any time. Contact us for more details.
+KinkLink.com can be contacted at info@kinklink.com</string>
+    <string name="i_agree">I Agree</string>
+    <string name="i_agree_terms">I agree, terms and conditions</string>
+    <string name="i_agree_null">Please select terms and conditions</string>
+
+    <!--Create Account Screen-->
+    <string name="create_your_account">Create your account</string>
+    <string name="upload_your_photos">Upload your pictures</string>
+    <string name="question_answer">Answer questions to\ncalculate your best matches</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="other_info">Other Info</string>
+    <string name="profile_picture">Profile Pictures</string>
+    <string name="questions">Questions</string>
+    <string name="step_two">2</string>
+    <string name="step_three">3</string>
+    <string name="step_four">4</string>
+    <string name="btn_next">Next</string>
+    <string name="about_me">About Me</string>
+
+    <string name="name">Name</string>
+    <string name="dob">Date of Birth</string>
+    <string name="reg_email">Email Address</string>
+    <string name="already_acc">Already have an account ?</string>
+    <string name="sign_in">Sign in</string>
+
+    <string name="acc_name_null">Please enter Name</string>
+    <string name="acc_name_invalid">Name allow alphabets and space only</string>
+    <string name="acc_name_len_1">Name should be at least 2 character long</string>
+    <string name="acc_dob_null">Please select Birth date</string>
+    <string name="acc_email_null">Please enter Email Address</string>
+    <string name="acc_email_invalid">Please enter valid Email Address</string>
+    <string name="acc_email_already_exist">Email Address already exist</string>
+    <string name="acc_pass_null">Please enter Password</string>
+    <string name="acc_pass_invalid">Password should be at least 8 characters long</string>
+    <string name="acc_pass_exceed_max_len">Password cannot exceed 20 character</string>
+    <string name="acc_pass_wrong">Invalid Password</string>
+    <string name="acc_con_pass_null">Please enter Confirm Password</string>
+    <string name="acc_con_pass_not_match">Passwords do not match</string>
+    <string name="acc_interest_null">Please select at least one kink</string>
+    <string name="btn_sign_up">Sign Up</string>
+
+    <!--Upload Profile Images Screen-->
+    <string name="profile_image_null">Please upload at least one picture</string>
+    <string name="profile_image_upload_success">Picture uploaded successfully</string>
+    <string name="profile_image_delete_success">Picture removed successfully</string>
+    <string name="profile_image_delete_single">You should have at least one picture</string>
+    <string name="profile_not_fit_size">Picture does not fit into the allowed dimension</string>
+    <string name="image_text_heading">UPLOAD A PHOTO NOW, it\'s absolutely critical for success!</string>
+    <string name="image_text">The chances of you getting replies to your messages if you haven\'t uploaded a photo are extremely low. Having a photo shows you are interested in meeting people and your profile will show up in searches, matching, etc. No one is going to reply to your messages if you don\'t have a photo and everyone else does so upload one now!</string>
+
+    
+    
+    <!--email verification-->
+    <string name="email_verification_inst">Please verify your email address to continue with the KinkLink.</string>
+    <string name="btn_str">Already Verified</string>
+    <string name="resend_str">Re-Send</string>
+    
+    <!--Camera Permission Denied-->
+    <string name="denied_external_storage_permission">KinkLink does not have access to your camera and photos. Please grant permission to access it.</string>
+    <string name="denied_camera_permission">KinkLink does not have access to your camera and photos. Please grant permission to access it.</string>
+
+    <!--Select Interests Screen-->
+    <string name="reg_interests">Add Kinks</string>
+
+    <!--Api Alerts-->
+    <string name="went_wrong">Something went wrong</string>
+    <string name="alert_no_network">No network connection</string>
+    <string name="session_expire">Session expired, please login again</string>
+    <string name="network_message">No internet connection found.\nPlease check your internet connection\nand try again.</string>
+    <string name="try_again">Try Again</string>
+    <string name="toast_no_network">Please check your Network Connection</string>
+
+    <!--Custom Alert Dialog-->
+    <string name="alert_heading">Alert</string>
+    <string name="alert_ok">OK</string>
+
+    <!--Picker text-->
+    <string name="crop_image_activity_title">Crop Image</string>
+    <string name="crop_image_menu_rotate_left">Rotate counter clockwise</string>
+    <string name="crop_image_menu_rotate_right">Rotate</string>
+    <string name="crop_image_menu_crop">Crop</string>
+    <string name="pick_image_intent_chooser_title">Select source</string>
+    <string name="result_image_desc">crop result</string>
+    <string name="pick_image_intent_text">Choose an image</string>
+
+    <!--Edit Profile-->
+    <string name="edit_profile">Edit Profile</string>
+
+    <!--Basic Info Fragment-->
+    <string name="account_info">Account Info</string>
+    <string name="gender">Any Gender</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_save_continue">Save and Continue</string>
+    <string name="discard_changes">Are you sure you want to discard the changes</string>
+
+    <!--Other Info Fragment-->
+    <string name="add_interest">Add Kinks</string>
+    <string name="select_interests">Select Kinks</string>
+    <string name="interests">Kinks</string>
+    <string name="select">Select</string>
+    <string name="city_town">Home City/Town</string>
+    <string name="current_location">Current\nLocation</string>
+    <string name="intent">Looking for</string>
+    <string name="looking_for_intent">Looking for</string>
+    <string name="body_type"> Any Body-Type</string>
+    <string name="ethnicity">Any Ethnicity</string>
+    <string name="work">Work</string>
+    <string name="enter_work">Please enter your Profession</string>
+    <string name="education">Education</string>
+    <string name="preferences">Preference</string>
+    <string name="about">About</string>
+    <string name="hint_about_yourself">About Your Self</string>
+    <string name="please_select">Please select one option</string>
+    <string name="select_preferences">Select Preference</string>
+    <string name="preference_null">Please select your Preference</string>
+
+    <string name="acc_city_null">Please select City/Town</string>
+    <string name="acc_body_type_null">Please select Body-Type</string>
+    <string name="acc_ethnicity_null">Please select Ethnicity</string>
+    <string name="acc_work_null">Please enter Work</string>
+    <string name="acc_education_null">Please select Education</string>
+    <string name="acc_about_null">Please enter About Your Self</string>
+
+    <!--Edit Profile Pictures-->
+    <string name="btn_back">Back</string>
+
+    <!--Matches (Main Activity)-->
+    <string name="matches">Matches</string>
+    <string name="meet_up">Discover</string>
+    <string name="travel_kink">Travel</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_visits">Parameters I Set</string>
+    <string name="settings">Settings</string>
+    <string name="views">Views</string>
+
+    <!--Match List Fragment-->
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="match">Match</string>
+    <string name="yr">Yr</string>
+    <string name="miles">mi</string>
+    <string name="search_user">Search User</string>
+    <string name="no_match_found">No Match Found</string>
+
+    <!--Privacy Policy Dialog-->
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="btn_reply">Reply</string>
+
+    <!--Match Profile Fragment-->
+    <string name="make_offer">Message Now!</string>
+    <string name="block">Block</string>
+    <string name="unblock">Unblock</string>
+    <string name="report">Report</string>
+    <string name="enter_offer_price">Offer Amount</string>
+    <string name="hopefully">Hopefully </string>
+    <string name="make_offer_text"> wants to connect with you too! Make a date offer, or try your luck with just your good looks. Good luck!</string>
+    <string name="free_love">Free Date</string>
+    <string name="amount">Amount</string>
+    <string name="i_will_pay">I\'ll Pay You</string>
+    <string name="you_pay_me">You Pay Me</string>
+    <string name="dollar_sign">$</string>
+    <string name="hint_message">Enter Message</string>
+    <string name="pending">Pending</string>
+    <string name="kinks_not_matched">Kinks not matched</string>
+
+    <!--Report-->
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="title_placeholder">Enter Title</string>
+    <string name="decription_placeholder">Enter Description</string>
+    <string name="title_null">Please enter Title</string>
+    <string name="description_null">Please enter Description</string>
+
+
+    <!--Match Complete Profile-->
+    <string name="photo_gallery">Photo Gallery</string>
+    <string name="na">NA</string>
+
+    <!--Settings-->
+    <string name="change_password">Change Password</string>
+    <string name="subscription">Subscription</string>
+    <string name="verify_photo">Verify Photo</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="logout">Logout</string>
+    <string name="change_password_dummy_txt">It is a long established fact that a reader readable content of page when looking at its</string>
+    <string name="change_password_text">Use the form below to change your password. New passwords are required to be a minimum of 8 characters in length.</string>
+    <string name="notification_list">Notifications</string>
+    <string name="delete_ac_alret_str">You are about to permanenatly delete KinkLink and all its contents. You will not be able to recover this contents. This operation can not be undone.</string>
+    <string name="pass_not_matched">Password not matched with current passowrd.</string>
+
+
+    <!--Match Filter-->
+    <string name="filter">Filter</string>
+    <string name="search_by_name">Search By Name</string>
+    <string name="search_by_interests">Search By Kinks</string>
+    <string name="search_by_city">Search By City</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_search">Search</string>
+
+    <!--New Match Filter-->
+    <string name="advance_search">Search</string>
+    <string name="sort_by">Sort By</string>
+    <string name="distance">Distance</string>
+    <string name="percentage">Match %</string>
+    <string name="random">Random</string>
+    <string name="favorite">Favorite</string>
+    <string name="search_by_user">Search By User</string>
+    <string name="select_kinks">Select Kinks</string>
+    <string name="age">Age</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="select_looking_for">Select Looking For</string>
+    <string name="any_intent">Select Intent</string>
+    <string name="select_body_type">Select Body-Type</string>
+    <string name="any_ethnicity">Select Ethnicity</string>
+    <string name="body_type_heading">Body Type</string>
+    <string name="enter_city">Enter City</string>
+    <string name="miles_placeholder">miles</string>
+    <string name="mile_placeholder">mile</string>
+
+    <!--Offers-->
+    <string name="offers">Offers</string>
+    <string name="receive_offer">Offers Received</string>
+    <string name="my_offer">Offers Sent</string>
+    <string name="no_offer_found">No Offer Found</string>
+    <string name="you_pay">You Pay</string>
+    <string name="i_pay">I\'ll Pay</string>
+    <string name="offer_price">Offer Price</string>
+    <string name="counter_price">Counter Price</string>
+    <string name="city">City</string>
+    <string name="accept">Accept</string>
+    <string name="counter">Counter</string>
+    <string name="declined">Decline</string>
+    <string name="free_love_txt">Free Date</string>
+    <string name="years_ago">years ago</string>
+    <string name="year_ago">year ago</string>
+    <string name="months_ago">months ago</string>
+    <string name="month_ago">month ago</string>
+    <string name="weeks_ago">weeks ago</string>
+    <string name="week_ago">week ago</string>
+    <string name="days_ago">days ago</string>
+    <string name="day_ago">day ago</string>
+    <string name="hours_ago">hrs ago</string>
+    <string name="hour_ago">hr ago</string>
+    <string name="minutes_ago">mins ago</string>
+    <string name="minute_ago">min ago</string>
+    <string name="second_ago">sec ago</string>
+    <string name="seconds_ago">secs ago</string>
+    <string name="date_time_format">yyyy-MM-dd hh:mm:ss</string>
+    <string name="offer_amount_max_limit">Amount cannot exceed $10,000</string>
+    <string name="offer_type_null">Please select offer type</string>
+    <string name="offer_amount_null">Please enter Offer Amount</string>
+    <string name="counter_amount_invalid">Offer and Counter Price can\'t be same</string>
+    <string name="swipe_to_left">Swipe to left</string>
+    <string name="request_pending">Request pending</string>
+    <string name="request_accepted">Request accepted</string>
+    <string name="request_rejected">Request declined</string>
+    <string name="request_timeout">Time-out for this offer</string>
+    <string name="counter_applied">Counter applied</string>
+    <string name="counter_accepted">Counter accepted</string>
+    <string name="counter_rejected">Counter declined</string>
+    <string name="counter_pending">Counter pending</string>
+    <string name="heading_message">Message</string>
+
+    <string name="time_left_for_offer">Time left for this offer to expire</string>
+
+    <!--My Profile Fragment-->
+    <string name="likes">Teases</string>
+    <string name="favorites">Favorites</string>
+    <string name="viewed_me">Viewed Me</string>
+    <string name="dash_symbol">-</string>
+    <string name="me">Me</string>
+    <string name="support_chat">Support Chat</string>
+    <string name="chat_history">Chat History</string>
+
+    <!--My Visits Fragment-->
+    <string name="available_on">Travel to</string>
+    <string name="date">Date</string>
+    <string name="to">to</string>
+    <string name="add_my_availability">Add My Availability</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_city">Select City</string>
+    <string name="from_dt">From</string>
+    <string name="to_dt">To</string>
+    <string name="no_social_registered">No social user registered </string>
+    <string name="add_btn">Add</string>
+    <string name="add_visit_from_date_null">Please select From Date</string>
+    <string name="add_visit_to_date_null">Please select To Date</string>
+    <string name="add_visit_city_null">Please select City</string>
+    <string name="no_visits_found">No Parameter Found</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_visit_msg">Are you sure you want to delete \n this availability?</string>
+
+    <!--Meet Up Fragment-->
+    <string name="no_meet_up_found">No Record Found</string>
+
+    <!--Meet Up Filter-->
+    <string name="select_miles">Set Miles</string>
+
+    <!--Likes Fragment--><!--Teases Fragment-->
+    <string name="who_you_like">You Teased</string>
+    <string name="who_liked_me">Teased You</string>
+    <string name="like_response_message">Profile liked successfully</string>
+    <string name="unlike_response_message">Profile unliked successfully</string>
+    <string name="teases_sent_successfully">Your Tease was sent</string>
+
+    <!--Favorite Fragment-->
+    <string name="your_favorite">Your Favorites</string>
+    <string name="who_favorite_me">Who Favorited Me</string>
+    <string name="favorite_response_message">Profile added as a favorite successfully</string>
+    <string name="unfavorite_response_message">Profile unfavorite successfully</string>
+    <string name="no_record_found">No Record Found</string>
+
+    <!--Change Password Dialog-->
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="reset_it">Reset it.</string>
+    <string name="old_password_null">Please enter Old Password</string>
+    <string name="new_password_null">Please enter New Password</string>
+    <string name="old_new_pass_cannot_match">Old and New Password can\'t be same</string>
+    <string name="old_login_pass_not_match">Please enter correct Old Password</string>
+    <string name="logout_dialog_message">You have changed your password. Do you want to log out?</string>
+    <string name="dialog_yes_btn">Yes</string>
+    <string name="dialog_no_btn">Keep Login</string>
+
+    <!--Forgot Password-->
+    <string name="forgot_pass_txt">We just need your registered Email Address to send you password reset instructions.</string>
+    <string name="submit">Submit</string>
+
+    <!--Chat Activity-->
+    <string name="enter_message">Write a message…</string>
+    <string name="dummy_time">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="admin_chat_placeholder">How can i help you?</string>
+    <string name="block_user_alert">Are you want to block user?</string>
+    <string name="unblock_user_alert">Are you want to unblock user?</string>
+    <string name="tease_expire">Please send tease again for continue to conversation.</string>
+
+    <!--Chat History Activity-->
+    <string name="messages">Messages</string>
+    <string name="no_chat_found">No Chat Found</string>
+
+    <!--Views Fragment-->
+    <string name="who_you_view">Who I Viewed</string>
+    <string name="who_view_me">Viewed Me</string>
+
+    <!--Notifications Activity-->
+    <string name="no_unread_notifications">No Notification Found</string>
+
+    <!--Verify Photo Fragment-->
+    <string name="verify_photo_instruction1">Copy the gesture in the photo below. We\'ll compare them and if they match your profile will be verified and you can continue using</string>
+    <string name="verify_photo_instruction2"> as normal.</string>
+    <string name="status">Status</string>
+    <string name="approved">Approved</string>
+    <string name="being_reviewed">Being Reviewed</string>
+    <string name="rejected">Rejected</string>
+    <string name="reason">Reason</string>
+    <string name="verify_me">Verify Me</string>
+    <string name="verified">Verified</string>
+
+    <string name="verify_photo_null">Please upload image for verification</string>
+    <string name="decline">Decline</string>
+    <string name="send_request">Send</string>
+    <string name="time_left_for_this_tease_to_expire">Time left for this tease to expire</string>
+    <string name="select_all_apply">Select all that apply</string>
+    <string name="neutral">Non Binary</string>
+
+
+    <string name="terms"><![CDATA[Terms and Conditions<u>underline</u>]]></string>
+    <string name="admin_profile">Admin Profile</string>
+    <string name="profile_incomplete_message">As your profile is not completed, so you will not be searched according to given search factor. Please complete your profile for being searched by more people</string>
+    <string name="user_no_loger_available">User no longer available</string>
+
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/interest_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_sign_up"
+        android:overScrollMode="never"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_above="@+id/view_bottom"
+        android:layout_marginLeft="@dimen/_25sdp"
+        android:layout_marginRight="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/bg_login_btn"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/sign_up"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp" />
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+
+</RelativeLayout>

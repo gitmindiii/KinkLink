@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_legal_success"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/logo" />
+
+
+        <TextView
+            android:id="@+id/alert_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:maxLines="10"
+            android:text="@string/tease_expire"
+            android:textColor="@color/field_text_color"
+            android:textSize="@dimen/_14ssp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
