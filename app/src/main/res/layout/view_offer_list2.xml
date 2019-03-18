@@ -232,7 +232,6 @@
                             </RelativeLayout>
 
                             <RelativeLayout
-                                android:id="@+id/rl_user_personal_info"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="@dimen/_10sdp"
@@ -294,7 +293,6 @@
                                                 android:textSize="@dimen/_15ssp" />
 
                                             <android.support.v7.widget.AppCompatImageView
-                                                android:id="@+id/iv_offer_check"
                                                 android:layout_width="@dimen/_20sdp"
                                                 android:layout_height="@dimen/_20sdp"
                                                 android:layout_marginStart="@dimen/_2sdp"

@@ -152,7 +152,6 @@
                 android:layout_gravity="center">
 
                 <ImageView
-                    android:id="@+id/iv_favorite_border"
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_gravity="center"
@@ -193,14 +192,12 @@
                 android:layout_gravity="center">
 
                 <ImageView
-                    android:id="@+id/iv_filter_border"
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="@dimen/_35sdp"
                     android:layout_gravity="center"
                     android:src="@drawable/inactive_match_filter_icon_border" />
 
                 <ImageView
-                    android:id="@+id/iv_filter"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_centerInParent="true"
@@ -222,7 +219,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ly_match_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

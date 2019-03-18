@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
@@ -18,9 +17,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
-import android.text.SpannableString;
 import android.text.method.ScrollingMovementMethod;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -53,11 +50,8 @@ import com.kinklink.helper.LocationRuntimePermission;
 import com.kinklink.helper.Progress;
 import com.kinklink.helper.Utils;
 import com.kinklink.helper.Validation;
-import com.kinklink.modules.authentication.activity.LoginActivity;
-import com.kinklink.modules.authentication.activity.RegisterGenderActivity;
 import com.kinklink.modules.authentication.activity.RegistrationActivity;
 import com.kinklink.modules.authentication.model.RegistrationInfo;
-import com.kinklink.modules.matches.activity.TermsConditionActivity;
 import com.kinklink.server_task.WebService;
 import com.kinklink.session.Session;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -307,7 +301,6 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
     // Get Latitude and Longitude
 
 
-
     @Override
     public void onClick(View view) {
         // Preventing multiple clicks, using threshold of 1/2 second
@@ -334,7 +327,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
                             String dateOfBirth = Utils.dateInYMDFormat(dob);
 
                             // Create Account Button
-                            callCreateAccountApi(full_name, email, "", dateOfBirth, acc_looking_for, acc_gender, reg_info.userDetail.social_id, "facebook", reg_info.userDetail.images.get(0).image,mLatitude,mLongitude);
+                            callCreateAccountApi(full_name, email, "", dateOfBirth, acc_looking_for, acc_gender, reg_info.userDetail.social_id, "facebook", reg_info.userDetail.images.get(0).image, mLatitude, mLongitude);
                         }
 
                     }
@@ -349,7 +342,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
                         String dateOfBirth = Utils.dateInYMDFormat(dob);
 
                         // Create Account Button
-                        callCreateAccountApi(full_name, email, password, dateOfBirth, acc_looking_for, acc_gender, "", "", "",mLatitude,mLongitude);
+                        callCreateAccountApi(full_name, email, password, dateOfBirth, acc_looking_for, acc_gender, "", "", "", mLatitude, mLongitude);
                     }
                 }
 
@@ -379,7 +372,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
         } else if (!v.isEmailValid(ed_acc_email)) {
             CustomToast.getInstance(mContext).showToast(mContext, getString(R.string.acc_email_invalid));
             return false;
-        }else if (name.length() == 1) {
+        } else if (name.length() == 1) {
             CustomToast.getInstance(mContext).showToast(mContext, getString(R.string.acc_name_len_1));
             return false;
         } else if (!v.isNameValid(ed_acc_name)) {
@@ -512,11 +505,11 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
             map.put("full_name", full_name);
             map.put("email", email);
             map.put("password", password);
-            if(latitude==null)map.put("latitude", "");
-                else map.put("latitude", latitude);
+            if (latitude == null) map.put("latitude", "");
+            else map.put("latitude", latitude);
 
-            if(latitude==null)map.put("longitude" ,"");
-                else map.put("longitude" ,longitude);
+            if (latitude == null) map.put("longitude", "");
+            else map.put("longitude", longitude);
 
 
             map.put("dob", dob);
@@ -528,7 +521,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
             map.put("device_token", device_token);
             map.put("device_type", "2");
             map.put("signupFrom", "2");
-            Log.i("map873",""+map.toString());
+            Log.i("map873", "" + map.toString());
 
             WebService api = new WebService(mContext, KinkLink.TAG, new WebService.WebResponseListner() {
                 @Override
@@ -548,16 +541,16 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
 
                             Gson gson = new Gson();
                             RegistrationInfo registrationInfo = gson.fromJson(String.valueOf(js), RegistrationInfo.class);
-                           // registrationInfo.userDetail.is_profile_complete = "0";
+                            // registrationInfo.userDetail.is_profile_complete = "0";
                             session.createRegistration(registrationInfo);
 
                             session.setPrivacyPolicy(registrationInfo.policy);
 
                             session.setLoginPassword(password);
 
-                          //  callRegisterFirebase(registrationInfo);
+                            //  callRegisterFirebase(registrationInfo);
 
-                           // registrationInfo.userDetail.profile_step = "1";
+                            // registrationInfo.userDetail.profile_step = "1";
                             session.createRegistration(registrationInfo);
                             // session.setScreen("SignUpVerifyPhotoFragment");
                             // ((RegistrationActivity) mContext).replaceFragment(SignUpVerifyPhotoFragment.newInstance(), false, R.id.reg_fragment_place);
@@ -577,8 +570,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
                             RegistrationInfo reg_info = session.getRegistration();
                             if (reg_info != null && reg_info.userDetail.social_id.equals("")) {
                                 openEmailSentMagDialog();
-                            }
-                            else{
+                            } else {
                                 ((RegistrationActivity) mContext).replaceFragment(UploadPhotosFragment.newInstance(), false, R.id.reg_fragment_place);
 
                             }
@@ -614,8 +606,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
 
             });
             api.callApi("registration", Request.Method.POST, map);
-        }
-        else {
+        } else {
             View view = getView();
             if (view != null) {
                 AppHelper.hideKeyboard(view, mContext);
@@ -627,7 +618,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
                 @Override
                 public void onClick(View v) {
                     // Create Account Button
-                    callCreateAccountApi(full_name, email, password, dob, acc_looking_for, acc_gender, "", "", "",mLatitude,mLongitude);
+                    callCreateAccountApi(full_name, email, password, dob, acc_looking_for, acc_gender, "", "", "", mLatitude, mLongitude);
                 }
             });
         }
@@ -909,7 +900,7 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
         }
     }
 
-// Dialog to show email sent message
+    // Dialog to show email sent message
     private void openEmailSentMagDialog() {
         final Dialog legalDialog = new Dialog(mContext);
         legalDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -925,11 +916,9 @@ public class CreateAccountFragment extends Fragment implements View.OnClickListe
         TextView btn_ok = legalDialog.findViewById(R.id.btn_ok);
 
 
-
         TextView alert_message = legalDialog.findViewById(R.id.alert_message);
 
         alert_message.setMovementMethod(new ScrollingMovementMethod());
-
 
 
         btn_ok.setOnClickListener(new View.OnClickListener() {

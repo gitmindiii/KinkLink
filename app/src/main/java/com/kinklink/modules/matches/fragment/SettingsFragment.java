@@ -11,12 +11,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.SwitchCompat;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,6 +38,8 @@ import com.kinklink.helper.Progress;
 import com.kinklink.helper.Utils;
 import com.kinklink.helper.Validation;
 import com.kinklink.modules.authentication.activity.ForgotPasswordActivity;
+import com.kinklink.modules.authentication.model.RegistrationInfo;
+import com.kinklink.modules.matches.activity.ActivityNotificationSetting;
 import com.kinklink.modules.matches.activity.MyProfileActivity;
 import com.kinklink.modules.matches.activity.TermsConditionActivity;
 import com.kinklink.server_task.WebService;
@@ -50,7 +54,7 @@ import java.util.Map;
 public class SettingsFragment extends Fragment implements View.OnClickListener {
     private Context mContext;
     private TextView action_bar_heading, btn_change_password;
-    private RelativeLayout rl_change_password, rl_terms_conditions, rl_logout, rl_delete_ac;
+    private RelativeLayout rl_change_password, rl_terms_conditions, rl_logout, rl_delete_ac,rl_notifications_setting;
     private Session session;
     private Dialog changePassword, logoutPassword;
     private EditText ed_old_password, ed_new_password, ed_confirm_password;
@@ -85,10 +89,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        session = new Session(mContext);
         init(view);
         action_bar_heading.setText(getString(R.string.settings));
         progress = new Progress(mContext);
-        session = new Session(mContext);
+
         userId = session.getRegistration().userDetail.userId;
 
         if (!session.getRegistration().userDetail.social_id.equals("")) {
@@ -100,6 +105,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         // Click listeners
         rl_logout.setOnClickListener(this);
         rl_delete_ac.setOnClickListener(this);
+        rl_notifications_setting.setOnClickListener(this);
         rl_change_password.setOnClickListener(this);
         rl_terms_conditions.setOnClickListener(this);
         //  rl_subscription.setOnClickListener(this);
@@ -108,6 +114,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     }
 
     private void init(View view) {
+
         action_bar_heading = ((MyProfileActivity) mContext).findViewById(R.id.action_bar_heading);
 
         ImageView iv_settings = ((MyProfileActivity) mContext).findViewById(R.id.iv_settings);
@@ -123,6 +130,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         //  rl_verify_photo = view.findViewById(R.id.rl_verify_photo);
         rl_logout = view.findViewById(R.id.rl_logout);
         rl_delete_ac = view.findViewById(R.id.rl_delete_ac);
+        rl_notifications_setting=view.findViewById(R.id.rl_notifications_setting);
 
         cv_settings = view.findViewById(R.id.cv_settings);
         ly_no_network = view.findViewById(R.id.ly_no_network);
@@ -166,6 +174,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
                     deleteSocialAccountConfirmationDialog();
                 }
 
+                //
+                break;
+
+
+            case R.id.rl_notifications_setting:   // Delete account
+
+                startActivity(new Intent(mContext,ActivityNotificationSetting.class));
                 //
                 break;
 
@@ -295,9 +310,9 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     private void callDeleteAccountApi() {
         if (AppHelper.isConnectingToInternet(mContext)) {
             progress.show();
-            String pass="";
+            String pass = "";
             if (session.getRegistration().userDetail.social_id.equals(""))
-             pass=session.getLoginPassword();
+                pass = session.getLoginPassword();
 
             final Map<String, String> map = new HashMap<>();
             map.put("password", pass);
@@ -688,8 +703,6 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         alert_message.setMovementMethod(new ScrollingMovementMethod());
 
 
-
-
         btn_i_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -721,6 +734,10 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         legalDialog.getWindow().setGravity(Gravity.CENTER);
         legalDialog.show();
     }
+
+
+
+
 
 
 }

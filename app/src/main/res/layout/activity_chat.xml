@@ -111,7 +111,6 @@
                 android:layout_below="@+id/tv_chat_date">
 
                 <RelativeLayout
-                    android:id="@+id/ly_chat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/rl_send_message"

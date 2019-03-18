@@ -21,12 +21,10 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:id="@+id/dialog_header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_95sdp">
 
                 <TextView
-                    android:id="@+id/tv_terms_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"

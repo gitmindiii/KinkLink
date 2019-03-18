@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
     <pl.droidsonroids.gif.GifTextView
-        android:id="@+id/progress"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_100sdp"
         android:layout_centerInParent="true"

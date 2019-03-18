@@ -19,7 +19,6 @@
             android:orientation="vertical">
             <RelativeLayout
                 android:visibility="visible"
-                android:id="@+id/dialog_header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_80sdp">
                 <TextView
@@ -85,7 +84,6 @@
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
                                 <RelativeLayout
-                                    android:id="@+id/rl_man"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/_100sdp">
                                     <pl.droidsonroids.gif.GifTextView

@@ -57,6 +57,9 @@ import com.kinklink.session.Session;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends KinkLinkParentActivity implements View.OnClickListener {
     private TextView action_bar_heading, tv_notification_count;
     private boolean doubleBackToExitPressedOnce;
@@ -106,6 +109,12 @@ public class MainActivity extends KinkLinkParentActivity implements View.OnClick
             String type = getIntent().getStringExtra("type");
             String uid = getIntent().getStringExtra("uid");
             //String list_type = getIntent().getStringExtra("list_type");
+            if(!type.equals("chat")){
+                String notification_id=getIntent().getStringExtra("notification_id");
+                if(notification_id!=null && !notification_id.isEmpty())
+                    callReadNotificationApi(notification_id,type);
+            }
+
 
             switch (type) {
                 case "chat":
@@ -889,7 +898,6 @@ public class MainActivity extends KinkLinkParentActivity implements View.OnClick
 
                         if (status.equals("success")) {
 
-
                             int count = Integer.parseInt(Count);
                             MainActivity.profileViewCount = count;
 
@@ -923,4 +931,89 @@ public class MainActivity extends KinkLinkParentActivity implements View.OnClick
             api.callApi("user/getViewedprofileCount", Request.Method.GET, null);
         }
     }
+
+
+    private void callReadNotificationApi(final String id, final String notification_type) {
+        if (AppHelper.isConnectingToInternet(MainActivity.this)) {
+
+            final Map<String, String> map = new HashMap<>();
+            map.put("notifyId", id);
+
+            WebService api = new WebService(MainActivity.this, KinkLink.TAG, new WebService.WebResponseListner() {
+                @Override
+                public void onResponse(String response, String apiName) {
+                    try {
+                        JSONObject js = new JSONObject(response);
+
+                        String status = js.getString("status");
+                        String message = js.getString("message");
+
+                        if (status.equals("success")) {
+
+                            int notify_count=MainActivity.notificationCount-1;
+                            if (notify_count >0) {
+                                MainActivity.notificationCount = notify_count;
+                                if (notify_count < 100) {
+                                    tv_notification_count.setText(""+notify_count);
+                                } else {
+                                    tv_notification_count.setText(new StringBuilder().append(""+notify_count).append("+").toString());
+                                }
+                                tv_notification_count.setVisibility(View.VISIBLE);
+                            } else {
+                                tv_notification_count.setVisibility(View.GONE);
+                            }
+
+
+                            if(notification_type.equals("view_updates")){
+                                int count=MainActivity.profileViewCount-1;
+                                if (count > 0) {
+                                    MainActivity.profileViewCount=count;
+                                    if (count < 100) {
+                                        txt_viewed_count.setText(""+count);
+                                    } else {
+                                        txt_viewed_count.setText(new StringBuilder().append(""+count).append("+").toString());
+                                    }
+                                    lay_viewd_count.setVisibility(View.VISIBLE);
+                                } else {
+                                    lay_viewd_count.setVisibility(View.GONE);
+                                }
+                            }
+
+
+                        } else {
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        CustomToast.getInstance(MainActivity.this).showToast(MainActivity.this, getString(R.string.went_wrong));
+                    }
+                }
+
+                @Override
+                public void ErrorListener(VolleyError error) {
+
+                }
+
+            });
+            api.callApi("user/readNotification", Request.Method.POST, map);
+        } else {
+            rl_notifications.setVisibility(View.GONE);
+            ly_no_network.setVisibility(View.VISIBLE);
+            TextView btn_try_again = findViewById(R.id.btn_try_again);
+            btn_try_again.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Preventing multiple clicks, using threshold of 1/2 second
+                    if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                        return;
+                    }
+                    mLastClickTime = SystemClock.elapsedRealtime();
+
+                    callReadNotificationApi(id,notification_type);
+                }
+            });
+        }
+    }
+
 }

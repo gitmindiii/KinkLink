@@ -49,6 +49,7 @@ public class Session {
 
     private static final String MakeOfferStatus = "makeOfferStatus";
 
+
     public Session(Context context) {
         this.context = context;
         mypref = this.context.getSharedPreferences(PREF_NAME, Context.MODE_MULTI_PROCESS);
@@ -295,4 +296,6 @@ public class Session {
     public String getPrivacyPolicy() {
         return mypref.getString(UserPrivacyPolicy, "");
     }
+
+
 }

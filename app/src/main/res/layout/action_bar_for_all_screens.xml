@@ -59,7 +59,6 @@
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/iv_notifications"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_centerVertical="true"

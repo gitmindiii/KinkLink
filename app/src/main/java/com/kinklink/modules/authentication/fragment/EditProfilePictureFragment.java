@@ -19,6 +19,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ import com.kinklink.modules.authentication.model.GetUserDetailModel;
 import com.kinklink.modules.authentication.model.ProfileImageModel;
 import com.kinklink.modules.authentication.model.RegistrationInfo;
 import com.kinklink.modules.matches.activity.MainActivity;
+import com.kinklink.modules.matches.adapter.AvatarViewAdapter;
 import com.kinklink.server_task.WebService;
 import com.kinklink.session.Session;
 import com.kinklink.view.cropper.CropImage;
@@ -71,8 +73,9 @@ import static android.app.Activity.RESULT_OK;
 
 public class EditProfilePictureFragment extends Fragment implements View.OnClickListener {
     private Context mContext;
-    private RecyclerView profile_recycler_view;
+    private RecyclerView profile_recycler_view,avatar_recycler_view;
     private ProfileImageAdapter profileImageAdapter;
+    private AvatarViewAdapter avatarViewAdapter;
     private ArrayList<ProfileImageModel> imagesList;
 
 
@@ -122,7 +125,9 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
         getUserDetails();
 
         // Adapter Listener to pick image or delete image
+
         adapterForEditProfilePic();
+        avatarViewAdapter();
 
         // Add default add image icon to model
         if (imagesList.size() == 0) {
@@ -169,8 +174,21 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
                 }
             }
         });
-        profile_recycler_view.setLayoutManager(new GridLayoutManager(mContext, 3));
+        profile_recycler_view.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));//new GridLayoutManager(mContext, 3)
         profile_recycler_view.setAdapter(profileImageAdapter);
+    }
+
+    private void avatarViewAdapter(){
+        avatarViewAdapter= new AvatarViewAdapter(imagesList, mContext, new ProfileImageListener() {
+            @Override
+            public void getPosition(int position, boolean pickImage) {
+
+            }
+        });
+
+        LinearLayoutManager layoutManager=new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
+        avatar_recycler_view.setLayoutManager(layoutManager);
+        avatar_recycler_view.setAdapter(avatarViewAdapter);
     }
 
     // Get User details Api
@@ -203,6 +221,7 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
                             }
 
                             profileImageAdapter.notifyDataSetChanged();
+                            avatarViewAdapter.notifyDataSetChanged();
                         } else {
                             progress.dismiss();
                             CustomToast.getInstance(mContext).showToast(mContext, message);
@@ -246,6 +265,7 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
     }
 
     private void init(View view) {
+        avatar_recycler_view= view.findViewById(R.id.avatar_recycler_view);
         profile_recycler_view = view.findViewById(R.id.profile_recycler_view);
         iv_back = ((EditProfileActivity) mContext).findViewById(R.id.iv_back);
         iv_step_one = ((EditProfileActivity) mContext).findViewById(R.id.iv_step_one);

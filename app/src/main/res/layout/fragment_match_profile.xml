@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ly_match_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/match_bg"
@@ -20,7 +19,7 @@
         <ImageView
             android:id="@+id/iv_user_image"
             android:layout_width="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:layout_height="@dimen/_230sdp"
             android:src="@drawable/user_place"
 
@@ -91,7 +90,6 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/nestedScrollView"
         android:layout_below="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -163,7 +161,6 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_match_heart"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_alignParentEnd="true"
@@ -283,7 +280,6 @@
             </LinearLayout>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/basic_info_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -569,7 +565,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_Notinterest_heading"
                             android:layout_width="@dimen/_100sdp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center|start"
@@ -650,7 +645,6 @@
             </android.support.v7.widget.CardView>
 
             <LinearLayout
-                android:id="@+id/ly_photo_gallery"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -698,7 +692,6 @@
             </LinearLayout>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/about_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

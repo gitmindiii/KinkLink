@@ -21,7 +21,6 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:id="@+id/dialog_header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
                 android:layout_marginBottom="@dimen/_10sdp">

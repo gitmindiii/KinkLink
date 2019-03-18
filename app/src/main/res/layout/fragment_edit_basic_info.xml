@@ -170,12 +170,10 @@
                         android:textSize="@dimen/_12ssp" />
 
                     <RelativeLayout
-                        android:id="@+id/rl_edit_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <android.support.v7.widget.AppCompatImageView
-                            android:id="@+id/iv_gender_dropdown"
                             android:layout_width="@dimen/_25sdp"
                             android:layout_height="@dimen/_25sdp"
                             android:layout_alignParentEnd="true"

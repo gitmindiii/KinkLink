@@ -43,6 +43,14 @@ public class RegistrationInfo implements Serializable {
         public String about;
         public String defaultImg;
         public String isEmailVerified;
+        public String verify_update;
+        public String tease_update;
+        public String favorite_update;
+        public String view_update;
+        public String chat_update;
+
+
+
         public List<ImagesBean> images = new ArrayList<>();
         public List<InterestsBean> interests = new ArrayList<>();
 

@@ -50,7 +50,7 @@ public class ActivityEmailVarification extends AppCompatActivity implements View
         ly_no_network = findViewById(R.id.ly_no_network);
         alert_message = findViewById(R.id.alert_message);
         btn_varified = findViewById(R.id.btn_varified);
-        String alert_msg = getResources().getString(R.string.email_verification_inst);
+        String alert_msg = getResources().getString(R.string.email_sent_msg);
         String alert_append_msg = alert_msg + " <font color='#cf1f2a'>" + getResources().getString(R.string.resend_str) + "</font>";
         alert_message.setText(Html.fromHtml(alert_append_msg));
 

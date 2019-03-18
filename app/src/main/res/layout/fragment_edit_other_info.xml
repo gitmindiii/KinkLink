@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rl_edit_other_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -51,7 +50,6 @@
                         android:textSize="@dimen/_14ssp" />
 
                     <android.support.v7.widget.AppCompatImageView
-                        android:id="@+id/iv_add_interest"
                         android:layout_width="@dimen/_25sdp"
                         android:layout_height="@dimen/_25sdp"
                         android:layout_alignParentEnd="true"
@@ -125,7 +123,6 @@
                 </RelativeLayout>
 
                 <View
-                    android:id="@+id/view_city"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/color_view1" />
@@ -384,7 +381,6 @@
                     android:textSize="@dimen/_12ssp" />
 
                 <RelativeLayout
-                    android:id="@+id/rl_about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp">

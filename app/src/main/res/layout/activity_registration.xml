@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/ly_activity_registration"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_splash_bg"
@@ -34,7 +33,6 @@
             android:padding="@dimen/_15sdp">
 
             <LinearLayout
-                android:id="@+id/ly_registration_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -66,7 +64,6 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/ly_status_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

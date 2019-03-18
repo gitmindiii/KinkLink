@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="reg_grid_width">@dimen/_70sdp</dimen>
-    <dimen name="reg_grid_height">@dimen/_70sdp</dimen>
 </resources>

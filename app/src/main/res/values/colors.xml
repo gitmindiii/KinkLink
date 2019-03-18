@@ -3,17 +3,11 @@
     <color name="colorPrimary">#cf1f2a</color>
     <color name="colorPrimaryDark">#cf1f2a</color>
     <color name="colorAccent">#cf1f2a</color>
-    <color name="transparent_colorAccent">#80cf1f2a</color>
 
-    <color name="facebook">#475993</color>
     <color name="blue">#FF4C6ACE</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transprent">#00000000</color>
-    <color name="black50p">#80000000</color>
-
-    <color name="bg_make_offer_screen">#151615</color>
-    <color name="bg_make_offer_trans">#E6151615</color>
 
     <color name="gray">#828282</color>
     <color name="light_gray_color">#44000000</color>
@@ -39,7 +33,6 @@
 
     <color name="other_chat_bg">#d9d8d8</color>
     <color name="my_chat_bg">#e18086</color>
-    <color name="other_chat_text_color">#3c3c3c</color>
 
     <!--Offer-->
     <color name="offer_accept_btn">#17a117</color>

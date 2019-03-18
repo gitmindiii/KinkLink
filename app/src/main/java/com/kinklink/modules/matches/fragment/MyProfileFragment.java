@@ -354,6 +354,7 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
                     ProfileImageModel imageModal = new ProfileImageModel();
                     imageModal.imageId = getUser.userDetail.images.get(i).userImageId;
                     imageModal.profileUrl = getUser.userDetail.images.get(i).image;
+                    imageModal.profileUrl_thumb = getUser.userDetail.images.get(i).imageOriginal;
                     imagesList.add(imageModal);
                 }
                 matchPhotosAdapter.notifyDataSetChanged();

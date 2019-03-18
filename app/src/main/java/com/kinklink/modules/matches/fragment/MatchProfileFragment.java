@@ -610,7 +610,8 @@ public class MatchProfileFragment extends Fragment implements View.OnClickListen
                 for (int i = 0; i < getUser.userDetail.images.size(); i++) {
                     ProfileImageModel imageModal = new ProfileImageModel();
                     imageModal.imageId = getUser.userDetail.images.get(i).userImageId;
-                    imageModal.profileUrl = getUser.userDetail.images.get(i).image;
+                    imageModal.profileUrl_thumb = getUser.userDetail.images.get(i).image;
+                    imageModal.profileUrl = getUser.userDetail.images.get(i).imageOriginal;
                     imagesList.add(imageModal);
                 }
                 matchPhotosAdapter.notifyDataSetChanged();
@@ -777,7 +778,7 @@ public class MatchProfileFragment extends Fragment implements View.OnClickListen
             }
 
             if (!(getUser.userDetail == null)) {
-                if (getUser.userDetail.block_status.equals("unblock")) {
+                if (getUser.userDetail.block_status.equals("unblock") && !getUser.userDetail.like_status.equals("1")) {
 
                     getTotalDayBtwTimeStamp();
                 }

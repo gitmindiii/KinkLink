@@ -41,6 +41,7 @@ import com.kinklink.modules.authentication.activity.EditProfileActivity;
 import com.kinklink.modules.authentication.activity.RegistrationActivity;
 import com.kinklink.modules.authentication.adapter.InterestsAdapter;
 import com.kinklink.modules.authentication.listener.InterestIdListener;
+import com.kinklink.modules.authentication.model.AdminModel;
 import com.kinklink.modules.authentication.model.FirebaseUserModel;
 import com.kinklink.modules.authentication.model.GetUserDetailModel;
 import com.kinklink.modules.authentication.model.InterestsModel;
@@ -99,9 +100,9 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
 
         // Get other user data from User table from firebase with help of UID
         gettingDataFromUserTable("1");
-
-        // Write data to user table in firebase
         addUserFirebaseDatabase();
+
+
     }
 
     @Nullable
@@ -112,7 +113,7 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
         progress = new Progress(mContext);
         session = new Session(mContext);
         session.setScreen("SelectInterestFragment");
-
+        //getAdminList();
         // Select Interest Fragment Active
         setSelectInterestFragmentActive();
 
@@ -434,9 +435,8 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (!dataSnapshot.hasChild(chatNode)) {
-                                    if (otherUId.equals("1")) {
-                                        sendMessage();
-                                    }
+                                    sendMessage();
+
                                 }
                             }
 
@@ -555,6 +555,85 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
             progress.dismiss();
         }
     }
+
+
+    // Get Interests List
+    private void getAdminList() {
+        if (AppHelper.isConnectingToInternet(mContext)) {
+            progress.show();
+
+            WebService api = new WebService(mContext, KinkLink.TAG, new WebService.WebResponseListner() {
+                @Override
+                public void onResponse(String response, String apiName) {
+                    interestsList.clear();
+                    try {
+                        JSONObject js = new JSONObject(response);
+
+                        String status = js.getString("status");
+                        String message = js.getString("message");
+
+                        if (status.equals("success")) {
+                            progress.dismiss();
+                            cv_registration.setVisibility(View.VISIBLE);
+                            ly_no_network.setVisibility(View.GONE);
+
+                            String register_user_gender=session.getRegistration().userDetail.gender;
+                            JSONArray adminArray = js.getJSONArray("data");
+
+                            for (int i = 0; i < adminArray.length(); i++) {
+                                JSONObject object = adminArray.getJSONObject(i);
+
+                                String admin_gender=object.getString("gender");
+
+                                if(register_user_gender.equalsIgnoreCase(admin_gender)){
+                                    otherUId=object.getString("id");
+                                    otherName = object.getString("name");
+                                    otherProfileImage=object.getString("profile_image");
+                                    // Write data to user table in firebase
+                                    addUserFirebaseDatabase();
+
+
+                                }
+
+
+                            }
+                            displayInterestsDialog(interestsList);    // Display Interests List
+
+                        } else {
+                            progress.dismiss();
+                            CustomToast.getInstance(mContext).showToast(mContext, message);
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progress.dismiss();
+                    }
+                }
+
+                @Override
+                public void ErrorListener(VolleyError error) {
+                    progress.dismiss();
+                }
+
+            });
+            api.callApi("user/getAdminInfo", Request.Method.GET, null);
+        } else {
+            View view = getView();
+            if (view != null) {
+                AppHelper.hideKeyboard(view, mContext);
+            }
+
+            cv_registration.setVisibility(View.GONE);
+            ly_no_network.setVisibility(View.VISIBLE);
+            btn_try_again.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getInterestList();
+                }
+            });
+        }
+    }
+
 
 
 

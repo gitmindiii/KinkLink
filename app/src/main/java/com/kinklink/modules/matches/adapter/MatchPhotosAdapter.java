@@ -47,7 +47,7 @@ public class MatchPhotosAdapter extends RecyclerView.Adapter<MatchPhotosAdapter.
         holder.iv_user_image.setVisibility(View.VISIBLE);
         if (imagesList.get(position).profileUrl != null) {
 
-            Glide.with(mContext).load(imageModel.profileUrl).apply(new RequestOptions().placeholder(R.drawable.app_icon)).into(holder.iv_user_image);
+            Glide.with(mContext).load(imageModel.profileUrl_thumb).apply(new RequestOptions().placeholder(R.drawable.app_icon)).into(holder.iv_user_image);
 
             //Picasso.with(mContext).load(imageModel.profileUrl).placeholder(R.drawable.app_icon).into(holder.iv_user_image);
         }

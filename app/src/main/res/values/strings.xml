@@ -34,12 +34,10 @@
     <string name="forgot_pass"> Forgot Password?</string>
     <string name="login"> Login</string>
     <string name="or"> OR</string>
-    <string name="connect_facebook"> Connect With Facebook</string>
     <string name="dont_have_acc"> Don\'t have an account ?</string>
     <string name="sign_up"> Sign up</string>
 
     <string name="login_email_null">Please enter Email Address</string>
-    <string name="login_email_wrong">Invalid Email Address or Password</string>
     <string name="login_email_invalid">Please enter valid Email Address</string>
 
     <string name="login_password_null">Please enter your Password</string>
@@ -62,23 +60,18 @@
     <string name="you_are_a_null">Please select Who are you</string>
     <string name="lookin_for_null">Please select Looking for</string>
 
-    <string name="email_sent_msg">We did sent a link on your registered email to verify email address, please check.</string>
+    <string name="email_sent_msg">We sent a verification email to you. Please verify you’re email address from our email in order to use KinkLink. (Note: It May have went to your spam folder)</string>
 
     <!--Legal Account Dialog-->
     <string name="legal_message">I agree to receive emails from KinkLink.com relating to my account, and services, updates and promotions from KinkLink.com, its affiliates and subsidiaries. I acknowledge that I can withdraw my consent at any time. Contact us for more details.
 KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="i_agree">I Agree</string>
-    <string name="i_agree_terms">I agree, terms and conditions</string>
-    <string name="i_agree_null">Please select terms and conditions</string>
 
     <!--Create Account Screen-->
     <string name="create_your_account">Create your account</string>
     <string name="upload_your_photos">Upload your pictures</string>
-    <string name="question_answer">Answer questions to\ncalculate your best matches</string>
     <string name="basic_info">Basic Info</string>
-    <string name="other_info">Other Info</string>
     <string name="profile_picture">Profile Pictures</string>
-    <string name="questions">Questions</string>
     <string name="step_two">2</string>
     <string name="step_three">3</string>
     <string name="step_four">4</string>
@@ -89,7 +82,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="dob">Date of Birth</string>
     <string name="reg_email">Email Address</string>
     <string name="already_acc">Already have an account ?</string>
-    <string name="sign_in">Sign in</string>
 
     <string name="acc_name_null">Please enter Name</string>
     <string name="acc_name_invalid">Name allow alphabets and space only</string>
@@ -101,18 +93,14 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="acc_pass_null">Please enter Password</string>
     <string name="acc_pass_invalid">Password should be at least 8 characters long</string>
     <string name="acc_pass_exceed_max_len">Password cannot exceed 20 character</string>
-    <string name="acc_pass_wrong">Invalid Password</string>
     <string name="acc_con_pass_null">Please enter Confirm Password</string>
     <string name="acc_con_pass_not_match">Passwords do not match</string>
     <string name="acc_interest_null">Please select at least one kink</string>
-    <string name="btn_sign_up">Sign Up</string>
 
     <!--Upload Profile Images Screen-->
     <string name="profile_image_null">Please upload at least one picture</string>
     <string name="profile_image_upload_success">Picture uploaded successfully</string>
     <string name="profile_image_delete_success">Picture removed successfully</string>
-    <string name="profile_image_delete_single">You should have at least one picture</string>
-    <string name="profile_not_fit_size">Picture does not fit into the allowed dimension</string>
     <string name="image_text_heading">UPLOAD A PHOTO NOW, it\'s absolutely critical for success!</string>
     <string name="image_text">The chances of you getting replies to your messages if you haven\'t uploaded a photo are extremely low. Having a photo shows you are interested in meeting people and your profile will show up in searches, matching, etc. No one is going to reply to your messages if you don\'t have a photo and everyone else does so upload one now!</string>
 
@@ -124,8 +112,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="resend_str">Re-Send</string>
     
     <!--Camera Permission Denied-->
-    <string name="denied_external_storage_permission">KinkLink does not have access to your camera and photos. Please grant permission to access it.</string>
-    <string name="denied_camera_permission">KinkLink does not have access to your camera and photos. Please grant permission to access it.</string>
 
     <!--Select Interests Screen-->
     <string name="reg_interests">Add Kinks</string>
@@ -144,18 +130,14 @@ KinkLink.com can be contacted at info@kinklink.com</string>
 
     <!--Picker text-->
     <string name="crop_image_activity_title">Crop Image</string>
-    <string name="crop_image_menu_rotate_left">Rotate counter clockwise</string>
-    <string name="crop_image_menu_rotate_right">Rotate</string>
     <string name="crop_image_menu_crop">Crop</string>
     <string name="pick_image_intent_chooser_title">Select source</string>
-    <string name="result_image_desc">crop result</string>
     <string name="pick_image_intent_text">Choose an image</string>
 
     <!--Edit Profile-->
     <string name="edit_profile">Edit Profile</string>
 
     <!--Basic Info Fragment-->
-    <string name="account_info">Account Info</string>
     <string name="gender">Any Gender</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_skip">Skip</string>
@@ -178,20 +160,10 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="education">Education</string>
     <string name="preferences">Preference</string>
     <string name="about">About</string>
-    <string name="hint_about_yourself">About Your Self</string>
-    <string name="please_select">Please select one option</string>
     <string name="select_preferences">Select Preference</string>
     <string name="preference_null">Please select your Preference</string>
 
-    <string name="acc_city_null">Please select City/Town</string>
-    <string name="acc_body_type_null">Please select Body-Type</string>
-    <string name="acc_ethnicity_null">Please select Ethnicity</string>
-    <string name="acc_work_null">Please enter Work</string>
-    <string name="acc_education_null">Please select Education</string>
-    <string name="acc_about_null">Please enter About Your Self</string>
-
     <!--Edit Profile Pictures-->
-    <string name="btn_back">Back</string>
 
     <!--Matches (Main Activity)-->
     <string name="matches">Matches</string>
@@ -224,7 +196,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="hopefully">Hopefully </string>
     <string name="make_offer_text"> wants to connect with you too! Make a date offer, or try your luck with just your good looks. Good luck!</string>
     <string name="free_love">Free Date</string>
-    <string name="amount">Amount</string>
     <string name="i_will_pay">I\'ll Pay You</string>
     <string name="you_pay_me">You Pay Me</string>
     <string name="dollar_sign">$</string>
@@ -247,53 +218,43 @@ KinkLink.com can be contacted at info@kinklink.com</string>
 
     <!--Settings-->
     <string name="change_password">Change Password</string>
-    <string name="subscription">Subscription</string>
     <string name="verify_photo">Verify Photo</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="delete_account">Delete Account</string>
     <string name="logout">Logout</string>
-    <string name="change_password_dummy_txt">It is a long established fact that a reader readable content of page when looking at its</string>
     <string name="change_password_text">Use the form below to change your password. New passwords are required to be a minimum of 8 characters in length.</string>
     <string name="notification_list">Notifications</string>
     <string name="delete_ac_alret_str">You are about to permanenatly delete KinkLink and all its contents. You will not be able to recover this contents. This operation can not be undone.</string>
     <string name="pass_not_matched">Password not matched with current passowrd.</string>
-
-
+    <string name="favorite">Favorite Notification</string>
+    <string name="tease">Tease Notification</string>
+    <string name="profile_view">View Profile Notification</string>
+    <string name="chat">Chat Notification</string>
+    <string name="photo_verify">Admin Notification</string>
     <!--Match Filter-->
     <string name="filter">Filter</string>
-    <string name="search_by_name">Search By Name</string>
-    <string name="search_by_interests">Search By Kinks</string>
-    <string name="search_by_city">Search By City</string>
     <string name="btn_clear">Clear</string>
     <string name="btn_search">Search</string>
 
     <!--New Match Filter-->
     <string name="advance_search">Search</string>
-    <string name="sort_by">Sort By</string>
     <string name="distance">Distance</string>
     <string name="percentage">Match %</string>
     <string name="random">Random</string>
-    <string name="favorite">Favorite</string>
     <string name="search_by_user">Search By User</string>
     <string name="select_kinks">Select Kinks</string>
     <string name="age">Age</string>
     <string name="select_gender">Select Gender</string>
-    <string name="select_looking_for">Select Looking For</string>
-    <string name="any_intent">Select Intent</string>
     <string name="select_body_type">Select Body-Type</string>
     <string name="any_ethnicity">Select Ethnicity</string>
-    <string name="body_type_heading">Body Type</string>
     <string name="enter_city">Enter City</string>
     <string name="miles_placeholder">miles</string>
-    <string name="mile_placeholder">mile</string>
 
     <!--Offers-->
     <string name="offers">Offers</string>
     <string name="receive_offer">Offers Received</string>
     <string name="my_offer">Offers Sent</string>
     <string name="no_offer_found">No Offer Found</string>
-    <string name="you_pay">You Pay</string>
-    <string name="i_pay">I\'ll Pay</string>
     <string name="offer_price">Offer Price</string>
     <string name="counter_price">Counter Price</string>
     <string name="city">City</string>
@@ -316,11 +277,9 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="second_ago">sec ago</string>
     <string name="seconds_ago">secs ago</string>
     <string name="date_time_format">yyyy-MM-dd hh:mm:ss</string>
-    <string name="offer_amount_max_limit">Amount cannot exceed $10,000</string>
     <string name="offer_type_null">Please select offer type</string>
     <string name="offer_amount_null">Please enter Offer Amount</string>
     <string name="counter_amount_invalid">Offer and Counter Price can\'t be same</string>
-    <string name="swipe_to_left">Swipe to left</string>
     <string name="request_pending">Request pending</string>
     <string name="request_accepted">Request accepted</string>
     <string name="request_rejected">Request declined</string>
@@ -336,11 +295,8 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <!--My Profile Fragment-->
     <string name="likes">Teases</string>
     <string name="favorites">Favorites</string>
-    <string name="viewed_me">Viewed Me</string>
     <string name="dash_symbol">-</string>
     <string name="me">Me</string>
-    <string name="support_chat">Support Chat</string>
-    <string name="chat_history">Chat History</string>
 
     <!--My Visits Fragment-->
     <string name="available_on">Travel to</string>
@@ -351,10 +307,7 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="select_city">Select City</string>
     <string name="from_dt">From</string>
     <string name="to_dt">To</string>
-    <string name="no_social_registered">No social user registered </string>
     <string name="add_btn">Add</string>
-    <string name="add_visit_from_date_null">Please select From Date</string>
-    <string name="add_visit_to_date_null">Please select To Date</string>
     <string name="add_visit_city_null">Please select City</string>
     <string name="no_visits_found">No Parameter Found</string>
     <string name="edit">Edit</string>
@@ -370,8 +323,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <!--Likes Fragment--><!--Teases Fragment-->
     <string name="who_you_like">You Teased</string>
     <string name="who_liked_me">Teased You</string>
-    <string name="like_response_message">Profile liked successfully</string>
-    <string name="unlike_response_message">Profile unliked successfully</string>
     <string name="teases_sent_successfully">Your Tease was sent</string>
 
     <!--Favorite Fragment-->
@@ -404,9 +355,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="enter_message">Write a message…</string>
     <string name="dummy_time">Today</string>
     <string name="yesterday">Yesterday</string>
-    <string name="admin_chat_placeholder">How can i help you?</string>
-    <string name="block_user_alert">Are you want to block user?</string>
-    <string name="unblock_user_alert">Are you want to unblock user?</string>
     <string name="tease_expire">Please send tease again for continue to conversation.</string>
 
     <!--Chat History Activity-->
@@ -424,7 +372,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="verify_photo_instruction1">Copy the gesture in the photo below. We\'ll compare them and if they match your profile will be verified and you can continue using</string>
     <string name="verify_photo_instruction2"> as normal.</string>
     <string name="status">Status</string>
-    <string name="approved">Approved</string>
     <string name="being_reviewed">Being Reviewed</string>
     <string name="rejected">Rejected</string>
     <string name="reason">Reason</string>
@@ -439,7 +386,6 @@ KinkLink.com can be contacted at info@kinklink.com</string>
     <string name="neutral">Non Binary</string>
 
 
-    <string name="terms"><![CDATA[Terms and Conditions<u>underline</u>]]></string>
     <string name="admin_profile">Admin Profile</string>
     <string name="profile_incomplete_message">As your profile is not completed, so you will not be searched according to given search factor. Please complete your profile for being searched by more people</string>
     <string name="user_no_loger_available">User no longer available</string>

@@ -620,8 +620,6 @@ public class ViewsFragment extends Fragment implements View.OnClickListener {
 
     private void taskReadViewCount() {
         if (AppHelper.isConnectingToInternet(mContext)) {
-
-
             Map param_map=new HashMap();
             param_map.put("type","view_updates");
             WebService api = new WebService(mContext, KinkLink.TAG, new WebService.WebResponseListner() {
@@ -632,8 +630,6 @@ public class ViewsFragment extends Fragment implements View.OnClickListener {
 
                         String status = js.getString("status");
                         String message = js.getString("message");
-
-
                         if (status.equals("success")) {
 
                             MainActivity.profileViewCount = 0;

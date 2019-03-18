@@ -1231,7 +1231,13 @@ public class EditBasicInfoFragment extends Fragment implements View.OnClickListe
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         FirebaseUserModel userModel = new FirebaseUserModel();
-        userModel.firebaseToken = device_token;
+
+        String value = registrationInfo.userDetail.chat_update;
+        if(value.equals("1"))
+            userModel.firebaseToken = device_token;
+        else
+            userModel.firebaseToken = "";
+
         userModel.name = name;
         userModel.profilePic = profilePic;
         userModel.timeStamp = ServerValue.TIMESTAMP;

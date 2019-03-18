@@ -85,13 +85,14 @@ public class NotificationActivity extends KinkLinkParentActivity implements View
         notificationAdapter = new NotificationAdapter(NotificationActivity.this, notificationsList, new AdapterPositionListener() {
             @Override
             public void getPosition(int position) {
-                callReadNotificationApi(notificationsList.get(position).id);
+                //callReadNotificationApi(notificationsList.get(position).id);
 
                 Intent intent = new Intent(NotificationActivity.this, MainActivity.class);
                 intent.putExtra("type", notificationsList.get(position).notification_type);
-                intent.putExtra("uid",notificationsList.get(position).userId);
-                intent.putExtra("notify_for",notificationsList.get(position).userId);
+                intent.putExtra("uid",notificationsList.get(position).notification_by);
+                intent.putExtra("notify_for",notificationsList.get(position).notification_by);
                 intent.putExtra("list_type", notificationsList.get(position).list_type);
+                intent.putExtra("notification_id",notificationsList.get(position).id);
                 startActivity(intent);
                 finishAffinity();
             }

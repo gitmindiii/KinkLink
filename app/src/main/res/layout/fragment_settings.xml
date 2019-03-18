@@ -33,10 +33,13 @@
             android:orientation="vertical"
             android:padding="@dimen/_15sdp">
 
+
+
             <LinearLayout
                 android:id="@+id/ly_change_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -63,7 +66,6 @@
                         app:srcCompat="@drawable/ic_right_arrow" />
 
                     <TextView
-                        android:id="@+id/tv_change_password"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -169,7 +171,6 @@
                         app:srcCompat="@drawable/ic_right_arrow" />
 
                     <TextView
-                        android:id="@+id/tv_terms_conditions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -221,7 +222,6 @@
                         app:srcCompat="@drawable/ic_right_arrow" />
 
                     <TextView
-                        android:id="@+id/tv_delete_ac"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -243,6 +243,59 @@
                     android:background="@color/color_view1" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_notifications_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/iv_notification_set"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/notify_bell"
+                        android:tint="#000000"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_right_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/iv_notification_set"
+                        android:background="@null"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Notification Settings"
+                        android:textColor="@color/field_text_color"
+                        android:textColorHint="@color/field_text_color"
+                        android:textSize="@dimen/_14ssp" />
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/color_view1" />
+
+            </LinearLayout>
+
 
             <!--<LinearLayout
                 android:layout_width="match_parent"
@@ -318,7 +371,6 @@
 
 
                     <TextView
-                        android:id="@+id/tv_logout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
