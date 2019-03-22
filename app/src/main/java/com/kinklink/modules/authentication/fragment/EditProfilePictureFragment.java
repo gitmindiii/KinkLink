@@ -49,6 +49,7 @@ import com.kinklink.image.picker.ImagePicker;
 import com.kinklink.modules.authentication.activity.EditProfileActivity;
 import com.kinklink.modules.authentication.adapter.ProfileImageAdapter;
 import com.kinklink.modules.authentication.listener.ProfileImageListener;
+import com.kinklink.modules.authentication.model.AvtarModel;
 import com.kinklink.modules.authentication.model.FirebaseUserModel;
 import com.kinklink.modules.authentication.model.GetUserDetailModel;
 import com.kinklink.modules.authentication.model.ProfileImageModel;
@@ -77,6 +78,7 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
     private ProfileImageAdapter profileImageAdapter;
     private AvatarViewAdapter avatarViewAdapter;
     private ArrayList<ProfileImageModel> imagesList;
+    private ArrayList<AvtarModel.AvtarData> avtarList;
 
 
     private ImageView iv_back, iv_step_one, iv_step_two, iv_step_three, iv_step_one_bullet, iv_step_two_bullet;
@@ -120,9 +122,11 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
         setEditProfilePicFragmentActive();
 
         imagesList = new ArrayList<>();
+        avtarList = new ArrayList<>();
 
         // Get user details api
         getUserDetails();
+        getAvtars();
 
         // Adapter Listener to pick image or delete image
 
@@ -179,7 +183,7 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
     }
 
     private void avatarViewAdapter(){
-        avatarViewAdapter= new AvatarViewAdapter(imagesList, mContext, new ProfileImageListener() {
+        avatarViewAdapter= new AvatarViewAdapter(avtarList, mContext, new ProfileImageListener() {
             @Override
             public void getPosition(int position, boolean pickImage) {
 
@@ -221,7 +225,7 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
                             }
 
                             profileImageAdapter.notifyDataSetChanged();
-                            avatarViewAdapter.notifyDataSetChanged();
+
                         } else {
                             progress.dismiss();
                             CustomToast.getInstance(mContext).showToast(mContext, message);
@@ -707,6 +711,77 @@ public class EditProfilePictureFragment extends Fragment implements View.OnClick
 
 
             } else progress.dismiss();
+        }
+    }
+
+
+    // Get User details Api
+    private void getAvtars() {
+        if (AppHelper.isConnectingToInternet(mContext)) {
+            progress.show();
+
+            WebService api = new WebService(mContext, KinkLink.TAG, new WebService.WebResponseListner() {
+                @Override
+                public void onResponse(String response, String apiName) {
+                    try {
+                        JSONObject js = new JSONObject(response);
+
+                        String status = js.getString("status");
+                        String message = js.getString("message");
+
+                        if (status.equals("success")) {
+                            progress.dismiss();
+                            ly_edit_profile.setVisibility(View.VISIBLE);
+                            ly_no_network.setVisibility(View.GONE);
+
+                            Gson gson = new Gson();
+                            AvtarModel avtarModel = gson.fromJson(String.valueOf(js), AvtarModel.class);
+
+                            for (int i = 0; i < avtarModel.data.size(); i++) {
+                                AvtarModel.AvtarData avtarData=avtarModel.data.get(i);
+                                avtarList.add(avtarData);
+                            }
+
+                            avatarViewAdapter.notifyDataSetChanged();
+                        } else {
+                            progress.dismiss();
+                            CustomToast.getInstance(mContext).showToast(mContext, message);
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progress.dismiss();
+                        CustomToast.getInstance(mContext).showToast(mContext, getString(R.string.went_wrong));
+                    }
+                }
+
+                @Override
+                public void ErrorListener(VolleyError error) {
+                    progress.dismiss();
+                }
+
+            });
+            api.callApi("get_user_detault_avtar", Request.Method.GET, null);
+        } else {
+            View view = getView();
+            if (view != null) {
+                AppHelper.hideKeyboard(view, mContext);
+            }
+
+            ly_edit_profile.setVisibility(View.GONE);
+            ly_no_network.setVisibility(View.VISIBLE);
+            btn_try_again.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Preventing multiple clicks, using threshold of 1/2 second
+                    if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                        return;
+                    }
+                    mLastClickTime = SystemClock.elapsedRealtime();
+
+                    getAvtars();
+                }
+            });
         }
     }
 

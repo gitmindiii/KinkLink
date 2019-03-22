@@ -32,7 +32,7 @@ public class ActivityEmailVarification extends AppCompatActivity implements View
     Context mContext;
     private Progress progress;
     private LinearLayout ly_no_network;
-    private TextView alert_message, btn_varified;
+    private TextView alert_message, btn_varified,txt_gologin;
     private TextView btn_try_again;
     private Session session;
     @Override
@@ -50,12 +50,14 @@ public class ActivityEmailVarification extends AppCompatActivity implements View
         ly_no_network = findViewById(R.id.ly_no_network);
         alert_message = findViewById(R.id.alert_message);
         btn_varified = findViewById(R.id.btn_varified);
+        txt_gologin= findViewById(R.id.txt_gologin);
         String alert_msg = getResources().getString(R.string.email_sent_msg);
         String alert_append_msg = alert_msg + " <font color='#cf1f2a'>" + getResources().getString(R.string.resend_str) + "</font>";
         alert_message.setText(Html.fromHtml(alert_append_msg));
 
         alert_message.setOnClickListener(this);
         btn_varified.setOnClickListener(this);
+        txt_gologin.setOnClickListener(this);
         session = new Session(mContext);
     }
 
@@ -70,6 +72,12 @@ public class ActivityEmailVarification extends AppCompatActivity implements View
             case R.id.btn_varified:
                 task_CheckIsEmailVerified();
                 break;
+
+            case R.id.txt_gologin:
+                goToLogin();
+                break;
+
+
         }
     }
 
@@ -185,5 +193,11 @@ public class ActivityEmailVarification extends AppCompatActivity implements View
                 }
             });
         }
+    }
+
+    public void goToLogin(){
+        Intent intent = new Intent(ActivityEmailVarification.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

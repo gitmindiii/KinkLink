@@ -14,18 +14,19 @@ import com.github.siyamed.shapeimageview.RoundedImageView;
 import com.kinklink.R;
 import com.kinklink.modules.authentication.adapter.ProfileImageAdapter;
 import com.kinklink.modules.authentication.listener.ProfileImageListener;
+import com.kinklink.modules.authentication.model.AvtarModel;
 import com.kinklink.modules.authentication.model.ProfileImageModel;
 
 import java.util.ArrayList;
 
 public class AvatarViewAdapter extends RecyclerView.Adapter<AvatarViewAdapter.ViewHolder> {
-    private ArrayList<ProfileImageModel> imagesList;
+    private ArrayList<AvtarModel.AvtarData> imagesList;
     private ProfileImageListener listener;
     private Context mContext;
     // variable to track event time
     private long mLastClickTime = 0;
 
-    public AvatarViewAdapter(ArrayList<ProfileImageModel> imagesList, Context mContext, ProfileImageListener listener) {
+    public AvatarViewAdapter(ArrayList<AvtarModel.AvtarData> imagesList, Context mContext, ProfileImageListener listener) {
         this.imagesList = imagesList;
         this.mContext = mContext;
         this.listener = listener;
@@ -39,24 +40,15 @@ public class AvatarViewAdapter extends RecyclerView.Adapter<AvatarViewAdapter.Vi
 
     @Override
     public void onBindViewHolder(AvatarViewAdapter.ViewHolder holder, int position) {
-        ProfileImageModel imageModel = imagesList.get(position);
+        AvtarModel.AvtarData imageModel = imagesList.get(position);
         holder.iv_user_image.setVisibility(View.VISIBLE);
-        if (imagesList.get(position).profileUrl != null) {
+        if (imagesList.get(position).avatarUrl != null) {
             //Picasso.with(mContext).load(imageModel.profileUrl).placeholder(R.drawable.app_icon).into(holder.iv_user_image);
-            Glide.with(mContext).load(imageModel.profileUrl).apply(new RequestOptions().placeholder(R.drawable.app_icon)).into(holder.iv_user_image);
-        } else if (imagesList.get(position).profileBitmap != null) {
-            //   Glide.with(mContext).load(imageModel.profileBitmap).into(holder.iv_user_image);
-            holder.iv_user_image.setImageBitmap(imageModel.profileBitmap);
+            Glide.with(mContext).load(imageModel.avatarUrl).apply(new RequestOptions().placeholder(R.drawable.app_icon)).into(holder.iv_user_image);
         }
 
-        if (position == imagesList.size() - 1) {
-            holder.iv_user_image.setBorderWidth(0);
-            holder.iv_user_image.setImageDrawable(imageModel.img);
-            holder.image_cancel.setVisibility(View.GONE);
-            holder.iv_user_image.setBorderColor(mContext.getResources().getColor(R.color.transprent));
-        } else {
             holder.image_cancel.setVisibility(View.VISIBLE);
-        }
+
     }
 
     @Override

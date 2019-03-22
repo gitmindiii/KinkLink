@@ -60,6 +60,24 @@
             android:textSize="@dimen/_14ssp"
             android:layout_marginTop="@dimen/_10sdp"/>
 
+
+        <TextView
+            android:id="@+id/txt_gologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center_vertical"
+            android:text="Go To Login"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+             android:layout_gravity="right"
+            android:textStyle="bold"
+
+            />
+
     </LinearLayout>
 
 

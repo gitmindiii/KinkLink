@@ -44,25 +44,26 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         click_action = remoteMessage.getData().get("click_action");
         sound = remoteMessage.getData().get("sound");
 
+        Session session = new Session(getApplicationContext());
+        String isEmailVerified = session.getRegistration().userDetail.isEmailVerified;
 
-        if (type.equals("chat")) {
+
+        if (type.equals("chat") && isEmailVerified.equals("1")) {
             if (!Constant.ChatOpponentId.equals(uid)) {
                 uid = remoteMessage.getData().get("uid");
                 sendChatNotification(title, body, uid, type);
             }
-        } else if (type.equals("view_updates")) {
+        } else if (type.equals("view_updates") && isEmailVerified.equals("1")) {
             Intent intent = new Intent("NOTIFICATIONCOUNT");
             intent.putExtra("from", "viewcount");
             MainActivity.profileViewCount = MainActivity.profileViewCount + 1;
             sendBroadcast(intent);
             sendNotification(list_type, title, body, type, click_action, notify_for, notification_id);
         } else {
-            Session session = new Session(getApplicationContext());
-            String isEmailVerified = session.getRegistration().userDetail.isEmailVerified;
+
             if (isEmailVerified.equals("0")) {
                 sendAdminNotification(list_type, title, body, type, click_action, notify_for, notification_id);
             } else {
-
                 Intent intent = new Intent("NOTIFICATIONCOUNT");
                 intent.putExtra("from", "notification");
                 MainActivity.notificationCount = MainActivity.notificationCount + 1;

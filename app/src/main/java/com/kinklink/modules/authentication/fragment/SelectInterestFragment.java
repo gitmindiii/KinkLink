@@ -99,8 +99,8 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         // Get other user data from User table from firebase with help of UID
-        gettingDataFromUserTable("1");
-        addUserFirebaseDatabase();
+        //gettingDataFromUserTable("1");
+        //addUserFirebaseDatabase();
 
 
     }
@@ -113,7 +113,7 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
         progress = new Progress(mContext);
         session = new Session(mContext);
         session.setScreen("SelectInterestFragment");
-        //getAdminList();
+        getAdminList();
         // Select Interest Fragment Active
         setSelectInterestFragmentActive();
 
@@ -426,7 +426,7 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
                     public void onComplete(@NonNull Task<Void> task) {
                         RegistrationInfo registrationInfo = session.getRegistration();
                         myUId = registrationInfo.userDetail.userId;
-                        otherUId = "1";
+                        //otherUId = "1";
 
                         //create note for chatroom
                         chatNode = gettingNotes();
@@ -580,11 +580,14 @@ public class SelectInterestFragment extends Fragment implements View.OnClickList
                             String register_user_gender=session.getRegistration().userDetail.gender;
                             JSONArray adminArray = js.getJSONArray("data");
 
+                            if(register_user_gender.equalsIgnoreCase("woman"))
+                                register_user_gender="woman";
+                            else register_user_gender="man";
+
                             for (int i = 0; i < adminArray.length(); i++) {
                                 JSONObject object = adminArray.getJSONObject(i);
 
                                 String admin_gender=object.getString("gender");
-
                                 if(register_user_gender.equalsIgnoreCase(admin_gender)){
                                     otherUId=object.getString("id");
                                     otherName = object.getString("name");
